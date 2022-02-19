@@ -1,0 +1,10 @@
+.ItemListContainer{
+    margin: 6rem 1rem;
+}
+
+@media screen and (min-width: 1100px){
+    .ItemListContainer{
+        max-width: 1100px;
+        margin: 2rem auto;
+    }
+}

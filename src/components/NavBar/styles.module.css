@@ -66,25 +66,36 @@
     margin-top: calc(70px + 1vh);
     background: whitesmoke;
     width: 250px;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     left: 0;
     gap: 2rem;
-    padding: 0 1rem;
+    padding: 1rem 1rem 2rem 1rem;
     font-size: 1.5rem;
     position: fixed;
     z-index: 90;
     box-shadow: 1px -6px 7px -6px #000;
+    overflow-y: auto;
+}
+
+li {
+    list-style: none;
 }
 
 .NavBar__menu>li,
 .NavBar__menu>p {
     cursor: pointer;
+    list-style: none;
 }
 
 .NavBar__list {
     display: none;
+}
+
+.NavBar__icons > span:hover {
+    color: #6C2F9A;
+    transform: scale(1.1);
 }
 
 @media screen and (min-width: 1100px) {

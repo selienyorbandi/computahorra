@@ -1,0 +1,24 @@
+.CartWidget {
+    position: relative;
+}
+.CartWidget:hover {
+    color: #6C2F9A;
+    transform: scale(1.1);
+}
+
+.CartWidget__ItemCount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .7rem;
+    font-weight: bold;
+    background-color: #B192C8;
+    color: #fff;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: .3rem;
+    padding: .1rem;
+    right: -20%;
+    top: 40%;
+}

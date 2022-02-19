@@ -2,9 +2,10 @@ import { useState } from "react";
 import logo from "../../assets/img/brandLogo.png";
 import styles from "./styles.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping, faUser, faBagShopping, faCaretDown, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faBagShopping, faCaretDown, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import CategoriesNavBar from "./CategoriesNavBar/CategoriesNavBar";
 import SearchBar from "./SearchBar/SearchBar";
+import CartWidget from "./CartWidget/CartWidget";
 
 function NavBar(){
     const [openMenu, setOpenMenu] = useState(false);
@@ -25,7 +26,7 @@ function NavBar(){
                 <div className={styles.NavBar__icons}>
                     <span><FontAwesomeIcon icon={faMagnifyingGlass} /></span>
                     <span><FontAwesomeIcon icon={faUser} /></span>
-                    <span><FontAwesomeIcon icon={faCartShopping}/></span>
+                    <CartWidget totalItems={0}/>
                 </div>
             </div>
             <ul className={styles.NavBar__list}>
