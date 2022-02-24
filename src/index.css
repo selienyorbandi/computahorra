@@ -7,3 +7,7 @@
     box-sizing: border-box;
     font-family: 'Karla', sans-serif;
 }
+
+body {
+    background: #F5F5F5;
+}

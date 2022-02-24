@@ -1,0 +1,34 @@
+.Item {
+    background: #fbfbfb;
+    width: 260px;
+    height: 480px;
+    border-radius: 5px;
+    border: solid 1px rgba(0, 0, 0, 0.144);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.Item__imgContainer {
+    height: 60%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.144);
+    cursor: pointer;
+}
+
+.Item__img {
+    width: 100%;
+}
+
+.Item__price {
+    color: #6C2F9A;
+    font-size: 1.7rem;
+    font-weight: 400;
+    margin: .5rem 0;
+}
+
+.Item__title {
+    font-size: 1.1rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+

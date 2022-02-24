@@ -83,14 +83,18 @@ li {
     list-style: none;
 }
 
-.NavBar__menu>li,
+.NavBar__menu > li,
 .NavBar__menu>p {
-    cursor: pointer;
     list-style: none;
+    cursor: pointer;
 }
 
 .NavBar__list {
     display: none;
+}
+
+.NavBar__list > li {
+    cursor: pointer;
 }
 
 .NavBar__icons > span:hover {
@@ -115,7 +119,6 @@ li {
         align-items: center;
         justify-items: center;
         font-size: 1.4rem;
-        cursor: pointer;
     }
     .NavBar__list>li:first-of-type {
         width: 150px;

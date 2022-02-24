@@ -1,5 +1,5 @@
 import "./App.css";
-import ItemListContainer from "./components/ItemListContainer.js/ItemListContainer";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import NavBar from "./components/NavBar/NavBar";
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
     <div className="Wrapper">
       <header>
         <NavBar/>
-        <ItemListContainer greeting={"¡Hola! Este es un componente provisorio para la entrega del desafío 4"}/>
+        <ItemListContainer/>
       </header>
     </div>
   );

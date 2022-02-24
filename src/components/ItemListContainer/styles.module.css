@@ -1,5 +1,8 @@
 .ItemListContainer{
     margin: 6rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 @media screen and (min-width: 1100px){

@@ -5,7 +5,7 @@ import styles from "./styles.module.css";
 function SearchBar(){
     return(
         <div className={styles.SearchBar}>
-            <input type="textarea" placeholder="Busque aquí lo que desee..."></input>
+            <input type="textarea" placeholder="Buscá aquí eso que querés"></input>
             <button type="submit"><FontAwesomeIcon icon={faMagnifyingGlass}/></button>
         </div>
     );
