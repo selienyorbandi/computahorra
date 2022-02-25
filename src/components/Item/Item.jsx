@@ -1,7 +1,7 @@
 import ItemCount from "./ItemCount/ItemCount";
 import styles from "./styles.module.css";
 
-function Item({title, price, img}) {
+function Item({title, price, img, stock}) {
     
     function addItem(amount, stock){
         if (amount <= stock)
@@ -15,7 +15,7 @@ function Item({title, price, img}) {
             </div>
             <span className={styles.Item__price}>${price.toLocaleString()}</span>
             <h6 className={styles.Item__title}>{title}</h6>
-            <ItemCount stock={11} initial={1} onAdd={addItem}/>
+            <ItemCount stock={stock} initial={1} onAdd={addItem}/>
         </div>
     );
 }

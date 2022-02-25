@@ -1,12 +1,29 @@
-import Item from "../Item/Item";
 import styles from "./styles.module.css";
-import Itempic from "../../assets/Temp/Placa_de_Video_Zotac_GeForce_RTX_3080_10GB_GDDR6X_Trinity_LHR.jpg";
+import { useState, useEffect } from "react";
+import { getItems } from "../../helpers/getItems";
+import Loader from "../Loader/Loader";
+import ItemList from "../ItemList/ItemList";
 
 function ItemListContainer(){
+    const [items, setItems] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        getItems
+            .then(response => response) //el .json si fuera un fetch real
+            .then(result => setItems(result))
+            .catch(error => console.log(error))
+            .finally(()=> setLoading(false));
+    }, [])
+
     return(
-        <div className={styles.ItemListContainer}>
-            <Item title="Placa de Video Zotac GeForce RTX 3080 10GB GDDR6X Trinity LHR" price={290000} img={Itempic}/>
-        </div>
+            <>
+               { loading ? <Loader/>:
+                 <div className={styles.ItemListContainer}>
+                    <ItemList items={items}/>
+                 </div>
+               }
+            </>
     );
 }
 

@@ -7,8 +7,10 @@ function App() {
     <div className="Wrapper">
       <header>
         <NavBar/>
-        <ItemListContainer/>
       </header>
+      <main>
+        <ItemListContainer/>
+      </main>
     </div>
   );
 }

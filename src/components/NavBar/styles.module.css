@@ -4,18 +4,26 @@
     display: flex;
     justify-content: center;
 }
-.Navigation__NavBar {
-    background: whitesmoke;
+
+.Navigation__NavBarCnt {
+    background: inherit;
     position: fixed;
-    width: 100%;
+    width: inherit;
     height: 100%;
     max-height: calc(70px + 1vh);
+    display: flex;
+    justify-content: center;
+    z-index: 999;
+}
+
+.Navigation__NavBar {
+    position: fixed;
+    width: 100%;
+    max-height: inherit;
     padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    overflow: hidden;
-    z-index: 900;
 }
 
 .NavBar__brandLogo {
@@ -58,7 +66,8 @@
     gap: 10px;
     cursor: pointer;
 }
-.NavBar__icons>span:nth-child(2){
+
+.NavBar__icons>span:nth-child(2) {
     display: none;
 }
 
@@ -83,7 +92,7 @@ li {
     list-style: none;
 }
 
-.NavBar__menu > li,
+.NavBar__menu>li,
 .NavBar__menu>p {
     list-style: none;
     cursor: pointer;
@@ -93,20 +102,22 @@ li {
     display: none;
 }
 
-.NavBar__list > li {
+.NavBar__list>li {
     cursor: pointer;
 }
 
-.NavBar__icons > span:hover {
+.NavBar__icons>span:hover {
     color: #6C2F9A;
     transform: scale(1.1);
 }
 
 @media screen and (min-width: 1100px) {
+
     .NavBar__btnMenu,
     .NavBar__menu {
         display: none;
     }
+
     .NavBar__list {
         margin-top: calc(70px + 1vh);
         display: flex;
@@ -120,6 +131,7 @@ li {
         justify-items: center;
         font-size: 1.4rem;
     }
+
     .NavBar__list>li:first-of-type {
         width: 150px;
         display: flex;
@@ -131,11 +143,13 @@ li {
     .Navigation__NavBar {
         max-width: 1200px;
     }
-    .NavBar__icons>span:nth-child(1){
+
+    .NavBar__icons>span:nth-child(1) {
         display: none;
     }
-    .NavBar__icons>span:nth-child(2){
+
+    .NavBar__icons>span:nth-child(2) {
         display: inline;
     }
-    
+
 }

@@ -30,5 +30,6 @@
     font-size: 1.1rem;
     font-weight: 400;
     cursor: pointer;
+    min-height: 60px;
 }
 
