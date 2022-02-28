@@ -11,7 +11,7 @@
 }
 
 .ItemCount__addCart {
-    background: #6C2F9A;
+    background: var(--primary-color);
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -22,12 +22,12 @@
 }
 
 .ItemCount__addCart:active {
-    background: #B192C8;
+    background: var(--secondary-color);
 }
 
 .ItemCount__count {
     display: flex;
-    border: solid 1px #B192C8;
+    border: solid 1px var(--secondary-color);
     border-radius: 5px;
     height: 40px;
 }
@@ -49,12 +49,12 @@
 }
 
 .ItemCount__controllers > span {
-    background: #B192C8;
+    background: var(--secondary-color);
     color: #ffffff;
     padding: 0 .5rem; 
     border-bottom: 1px solid #6c2f9a3d;
 }
 .ItemCount__controllers > span:hover {
-    background: #6C2F9A;
+    background: var(--primary-color);
 }
 

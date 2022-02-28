@@ -23,9 +23,9 @@
     }
     .NavBar_categories>p{
         padding: 1rem;
-        background: whitesmoke;
-        border-left: #6C2F9A solid 1px;
-        border-right: #6C2F9A solid 1px;
+        background: var(--light-color);
+        border-left: var(--primary-color) solid 1px;
+        border-right: var(--primary-color) solid 1px;
         color: #000;
         cursor: pointer;
     }
@@ -36,7 +36,7 @@
     .NavBar_categories>p:last-of-type{
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
-        border-bottom: #6C2F9A solid 1px;
+        border-bottom: var(--primary-color) solid 1px;
         box-shadow: none;
     }
     
@@ -47,6 +47,6 @@
         margin: auto;
         border-left:10px solid transparent; 
         border-right:10px solid transparent; 
-        border-bottom:10px solid whitesmoke;
+        border-bottom:10px solid var(--light-color);
     }
 }

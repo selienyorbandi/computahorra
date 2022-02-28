@@ -1,5 +1,5 @@
 .Navigation {
-    background: whitesmoke;
+    background: var(--light-color);
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -73,7 +73,7 @@
 
 .NavBar__menu {
     margin-top: calc(70px + 1vh);
-    background: whitesmoke;
+    background: var(--light-color);
     width: 250px;
     height: 100%;
     display: flex;
@@ -107,7 +107,7 @@ li {
 }
 
 .NavBar__icons>span:hover {
-    color: #6C2F9A;
+    color: var(--primary-color);
     transform: scale(1.1);
 }
 
@@ -123,8 +123,8 @@ li {
         display: flex;
         width: 100%;
         height: 60px;
-        background: #6C2F9A;
-        color: #fff;
+        background: var(--primary-color);
+        color: var(--light-color);
         gap: 3rem;
         justify-content: center;
         align-items: center;

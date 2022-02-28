@@ -1,0 +1,38 @@
+.Footer {
+    background: var(--darkest-color);
+}
+
+.Footer__content {
+    color: var(--light-color);
+    margin: auto;
+    max-width: 1100px;
+    padding: 2rem;
+}
+
+.Footer__content__row {
+    margin-bottom: 1.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.1rem;
+    justify-content: flex-start;
+    font-size: 1.1rem;
+}
+.Footer__content__hr {
+    border: 1px solid var(--dark-color);
+    margin-bottom: 1rem;
+}
+.Footer__content__row li {
+    cursor: pointer;
+}
+.Footer__content__row li:hover {
+    color: var(--secondary-color);
+}
+
+@media screen and (min-width: 1100px) {
+    .Footer__content__row {
+        justify-content: center;
+    }
+    .Footer__content__hr {
+        display: none;
+    }
+}

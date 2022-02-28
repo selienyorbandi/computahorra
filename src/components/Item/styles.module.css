@@ -1,5 +1,5 @@
 .Item {
-    background: #fbfbfb;
+    background: var(--lighter-color);
     width: 260px;
     height: 480px;
     border-radius: 5px;
@@ -20,7 +20,7 @@
 }
 
 .Item__price {
-    color: #6C2F9A;
+    color: var(--primary-color);
     font-size: 1.7rem;
     font-weight: 400;
     margin: .5rem 0;
