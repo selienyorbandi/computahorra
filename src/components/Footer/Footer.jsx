@@ -6,8 +6,8 @@ import styles from "./styles.module.css";
 function Footer(props) {
   return (
     <>
-      <NewsletterAdd />
       <footer className={styles.Footer}>
+        <NewsletterAdd />
         <div className={styles.Footer__content}>
           <ul className={styles.Footer__content__row}>
             <li>Botón de arrepentimiento</li>

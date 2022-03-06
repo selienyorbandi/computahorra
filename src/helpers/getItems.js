@@ -6,7 +6,7 @@ export const getItems = new Promise((resolve, reject)=> {
     if (status === "200"){
         setTimeout(() => {
             resolve(products);
-        }, 800);
+        }, 400);
     } else {
         reject("Error")
     }

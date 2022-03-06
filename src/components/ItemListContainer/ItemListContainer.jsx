@@ -17,13 +17,14 @@ function ItemListContainer(){
     }, [])
 
     return(
-            <>
-               { loading ? <Loader/>:
-                 <div className={styles.ItemListContainer}>
-                    <ItemList items={items}/>
-                 </div>
-               }
-            </>
+      <section>
+        <h1 className={styles.MainTitle}>Productos destacados</h1>
+           { loading ? <Loader/>:
+             <div className={styles.ItemListContainer}>
+                <ItemList items={items}/>
+             </div>
+           }
+      </section>
     );
 }
 

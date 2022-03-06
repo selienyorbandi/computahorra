@@ -1,8 +1,10 @@
 .Navigation {
     background: var(--light-color);
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
+    position: relative;
+    z-index: 9999;
 }
 
 .Navigation__NavBarCnt {
@@ -13,7 +15,7 @@
     max-height: calc(70px + 1vh);
     display: flex;
     justify-content: center;
-    z-index: 999;
+    z-index: 99999;
 }
 
 .Navigation__NavBar {
@@ -64,8 +66,7 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    cursor: pointer;
-}
+ }
 
 .NavBar__icons>span:nth-child(2) {
     display: none;
@@ -83,7 +84,7 @@
     padding: 1rem 1rem 2rem 1rem;
     font-size: 1.5rem;
     position: fixed;
-    z-index: 90;
+    z-index: 0;
     box-shadow: 1px -6px 7px -6px #000;
     overflow-y: auto;
 }
