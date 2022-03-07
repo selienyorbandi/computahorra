@@ -6,7 +6,7 @@ function SearchBar(){
     return(
         <div className={styles.SearchBar}>
             <input type="textarea" placeholder="Buscá aquí eso que querés"></input>
-            <button type="submit"><FontAwesomeIcon icon={faMagnifyingGlass}/></button>
+            <button type="submit" aria-label="Buscar"><FontAwesomeIcon icon={faMagnifyingGlass}/></button>
         </div>
     );
 }

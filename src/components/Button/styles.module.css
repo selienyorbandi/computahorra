@@ -1,0 +1,29 @@
+.Button {
+    border-radius: 5px;
+    padding: .3rem;
+    cursor: pointer;
+    height: 40px;
+}
+.Button__sm {
+    width: 150px;
+}
+.Button__md {
+    width: 250px;
+}
+
+.Button__primary {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+}
+
+.Button__secondary {
+    background: var(--light-color);
+    border: solid 1px var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.Button:active {
+    background: var(--secondary-color);
+}

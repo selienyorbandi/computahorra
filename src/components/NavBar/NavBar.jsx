@@ -21,7 +21,7 @@ function NavBar(){
                         <span></span>
                     </div>
                     <div className={styles.NavBar__brandLogo}>
-                        <img src={logo} alt="Computahorra logo" />
+                        <img src={logo} alt="Computahorra logo" width="132" height="44"/>
                     </div>
                     <SearchBar/>
                     <div className={styles.NavBar__icons}>

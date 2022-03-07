@@ -11,11 +11,11 @@ function Item({title, price, thumbnail, stock}) {
     return(
         <div className={styles.Item}>
             <div className={styles.Item__imgContainer}>
-                <img src={thumbnail} alt={title} className={styles.Item__img}/>
+                <img src={thumbnail} alt={title} className={styles.Item__img} width="225" height="225"/>
             </div>
-            <span className={styles.Item__price}>${price.toLocaleString()}</span>
+            <span className={styles.Item__price}>{Intl.NumberFormat("es-AR", {style: 'currency',currency: 'ARS', minimumFractionDigits: 0}).format(price)}</span>
             <h6 className={styles.Item__title}>{title}</h6>
-            <ItemCount stock={stock} initial={1} onAdd={addItem}/>
+            <ItemCount stock={stock} initial={1} onAdd={addItem} message="Añadir al carrito" size="sm" primary={true}/>
         </div>
     );
 }

@@ -1,5 +1,6 @@
 .ItemCount {
     display: flex;
+    align-items: center;
     gap: .5rem;
     margin: 1rem 0;
     user-select: none;
@@ -10,23 +11,9 @@
     -webkit-touch-callout: none;
 }
 
-.ItemCount__addCart {
-    background: var(--primary-color);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: .3rem;
-    width: 70%;
-    cursor: pointer;
-    height: 40px;
-}
-
-.ItemCount__addCart:active {
-    background: var(--secondary-color);
-}
-
 .ItemCount__count {
     display: flex;
+    align-items: center;
     border: solid 1px var(--secondary-color);
     border-radius: 5px;
     height: 40px;
@@ -57,4 +44,3 @@
 .ItemCount__controllers > span:hover {
     background: var(--primary-color);
 }
-

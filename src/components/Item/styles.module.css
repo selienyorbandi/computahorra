@@ -13,10 +13,13 @@
     height: 60%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.144);
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .Item__img {
     width: 100%;
+    height: auto;
 }
 
 .Item__price {
