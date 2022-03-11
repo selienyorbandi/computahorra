@@ -1,17 +1,15 @@
+import { NavLink } from "react-router-dom";
 import styles from "./styles.module.css";
 
-function CategoriesNavBar(){
-    return(
-        <div className={styles.NavBar_categories}>
-            <div></div>
-            <p className={styles.NavBar__categoriesDropdown}>Computadoras</p>
-            <p className={styles.NavBar__categoriesDropdown}>Notebooks</p>
-            <p className={styles.NavBar__categoriesDropdown}>Componentes de pc</p>
-            <p className={styles.NavBar__categoriesDropdown}>Periféricos</p>
-            <p className={styles.NavBar__categoriesDropdown}>Accesorios</p>
-            <p className={styles.NavBar__categoriesDropdown}>Monitores</p>
-        </div>
-    );
+function CategoriesNavBar({categories}){
+  return(
+    <div className={styles.NavBar_categories} >
+      <div className={styles.NavBar_categories__baloon}>
+        {categories.map(category => <NavLink key={category.id} to={`/category/${category.id}`}><p key={category.id} className={styles.NavBar__categoriesDropdown}>{category.name}</p></NavLink>)}
+      </div>
+    </div>
+  );
 }
 
 export default CategoriesNavBar;
+

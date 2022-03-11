@@ -1,8 +1,11 @@
 main {
-    min-height: 35vh;
+  min-height: 35vh;
+}
+li {
+  list-style: none;
 }
 @media screen and (min-height: 900px) {
-    main {
-        min-height: 55vh;
-    }
+  main {
+    min-height: 55vh;
+  }
 }

@@ -6,7 +6,7 @@
     "price": 290000,
     "img": "https://i.postimg.cc/MpvgH2V3/Placa-de-Video-Zotac-Ge-Force-RTX-3080-10-GB-GDDR6-X-Trinity-LHR-min.jpg",
     "stock": 6,
-    "categoryId": 1,
+    "categoryId": "componentes-pc",
     "thumbnail": "https://i.postimg.cc/nh37dgWx/Placa-de-Video-Zotac-Ge-Force-RTX-3080-10-GB-GDDR6-X-Trinity-LHR-min.jpg" 
   },
   {
@@ -16,7 +16,7 @@
     "price": 180000,
     "img": "https://i.postimg.cc/Xv5hKf2w/notebook-dell-156-inspiron-g5-ryzen-5-8gb-512gb-win10-1-min.jpg",
     "stock": 8,
-    "categoryId": 2,
+    "categoryId": "notebooks",
     "thumbnail": "https://i.postimg.cc/253WgTpZ/notebook-dell-156-inspiron-g5-ryzen-5-8gb-512gb-win10-1-min.jpg"
   },
   {
@@ -26,7 +26,7 @@
     "price": 10499,
     "img": "https://i.postimg.cc/ncVy8QzJ/adata-falcon-512-ssd-min.jpg",
     "stock": 21,
-    "categoryId": 1,
+    "categoryId": "componentes-pc",
     "thumbnail": "https://i.postimg.cc/2jWQzH1d/adata-falcon-512-ssd-min.jpg"
   },
   {
@@ -36,7 +36,7 @@
     "price": 54200,
     "img": "https://i.postimg.cc/SspPgn5H/Procesador-AMD-Ryzen-7-5700-G-4-6-GHz-Turbo-Wraith-Stealth-Cooler-min.jpg",
     "stock": 13,
-    "categoryId": 1,
+    "categoryId": "componentes-pc",
     "thumbnail": "https://i.postimg.cc/bJttwJwY/Procesador-AMD-Ryzen-7-5700-G-4-6-GHz-Turbo-Wraith-Stealth-Cooler-min.jpg"
   },
   {
@@ -46,7 +46,7 @@
     "price": 115000,
     "img": "https://i.postimg.cc/YCZZmnxr/Placa-de-Video-MSI-Radeon-RX-6600-8-GB-GDDR6-MECH-2x-min.jpg",
     "stock": 7,
-    "categoryId": 1,
+    "categoryId": "componentes-pc",
     "thumbnail": "https://i.postimg.cc/g05hpRdB/Placa-de-Video-MSI-Radeon-RX-6600-8-GB-GDDR6-MECH-2x-min.jpg"
   },
   {
@@ -56,7 +56,7 @@
    "price": 10700,
    "img": "https://i.postimg.cc/bJHBWzfr/hyperx-cloud-alpha-black-red.webp",
    "stock": 9,
-   "categoryId": 3,
+   "categoryId": "perifericos",
    "thumbnail": "https://i.postimg.cc/Prz1DPzP/hyperx-cloud-alpha-black-red.jpg"
  },
  {
@@ -66,7 +66,7 @@
    "price": 3499,
    "img": "https://i.postimg.cc/Qx6Rjx9W/logitech-g-pro-hero-min.jpg",
    "stock": 14,
-   "categoryId": 3,
+   "categoryId": "perifericos",
    "thumbnail": "https://i.postimg.cc/TYXrhrbz/logitech-g-pro-hero-min.jpg"
  },
  {
@@ -76,9 +76,49 @@
    "price": 28950,
    "img": "https://i.postimg.cc/VvfVc3zR/monitor-samsung-f24t35-led-24.webp",
    "stock": 6,
-   "categoryId": 3,
+   "categoryId": "monitores",
    "thumbnail": "https://i.postimg.cc/L89L32Nv/monitor-samsung-f24t35-led-24.jpg"
- }
+ },
+ {
+   "title": "Computadora Armada Pc Completa Intel I3 10100 8gb 240gb Ssd Monitor 22'' ",
+   "id": 9,
+   "description": "Pc ideal para trabajar desde casa con eficiencia y velocidad. Componentes: Micro intel i3 10100, Mother H410, Memoria RAM DDR4 8GB, Disco solido SSD 240GB, Gabinete ATX KIT,  Fuente 500w, teclado, mouse, Monitor 19'' HD y Placa de red Wifi",
+   "price": 110500,
+   "img": "https://i.postimg.cc/CK6FPk80/pcArmada.jpg",
+   "stock": 3,
+   "categoryId": "computadoras-armadas",
+   "thumbnail": "https://i.postimg.cc/XYLN5T7p/t9jet-j59wd.webp"
+ },
+ {
+  "title": "Mouse Pad Logitech G640 Gaming",
+  "id": 10,
+  "description": "FRICCIÓN DE SUPERFICIE MODERADA: Al usar valores de dpi bajos te beneficias de la resistencia moderada que los pies del mouse encuentran al iniciar o detener un movimiento rápido o repentino como suele suceder en los juegos de dpi bajos. G640 ofrece la fricción justa para maniobras de juegos con valores bajos de dpi. Tamaño: 460mm x 400mm x 3mm ",
+  "price": 2999,
+  "img": "https://i.postimg.cc/2SrcJtdd/logitechg640.jpg",
+  "stock": 13,
+  "categoryId": "accesorios",
+  "thumbnail": "https://i.postimg.cc/c4QkFW34/logitechg640th.jpg"
+},
+{
+ "title": "Apple Macbook Air 13\" 2020, Chip M1, 256 GB de SSD, 8 GB de RAM",
+ "id": 11,
+ "description": "La notebook más delgada y ligera de Apple viene con los superpoderes del chip M1. Termina todos tus proyectos mucho más rápido con el CPU de 8 núcleos y disfruta como nunca antes de apps y juegos con gráficos avanzados gracias al GPU de hasta 8 núcleos. Además, el Neural Engine de 16 núcleos se encarga de acelerar todos los procesos de aprendizaje automático. Todo en un diseño silencioso sin ventilador que te ofrece la mayor duración de batería en una MacBook Air: hasta 18 horas. (1) Portátil como siempre, más poderosa que nunca.",
+ "price": 199999,
+ "img": "https://i.postimg.cc/wB6h9832/D-NQ-NP-2-X-801112-MLA46516512347-062021-F.webp",
+ "stock": 2,
+ "categoryId": "notebooks",
+ "thumbnail": "https://i.postimg.cc/ht8LFP4h/tcizp-9iwkq.webp"
+},
+{
+ "title": "Soporte Regulable Aluminio Para Table O Notebook Jd Lp1019a",
+ "id": 12,
+ "description": "El soporte portátil JD LP1019 es una herramienta ergonómica esencial para el correcto uso de su laptop. Un diseño moderno, liviano y ajustable para optimizar el Angulo deseado. Compatible con todos los ordenadores portátiles de hasta 15,6 pulgadas. plegable y fácil de transportar.",
+ "price": 3100,
+ "img": "https://i.postimg.cc/tg47JXbr/soportenotebook.webp",
+ "stock": 7,
+ "categoryId": "accesorios",
+ "thumbnail": "https://i.postimg.cc/Wtch1gpr/ts5yq-a73d7.webp"
+}
 ]
 
 

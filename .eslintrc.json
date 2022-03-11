@@ -1,0 +1,10 @@
+{
+    "extends": 
+        "react-app",
+    "rules": {
+        "indent": ["warn", 2],
+        "semi": "warn",
+        "quotes": ["error", "double"],
+        "eqeqeq": ["error", "always"]
+    }
+}

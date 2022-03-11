@@ -1,25 +1,25 @@
-import "./App.css";
-import Footer from "./components/Footer/Footer";
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import NavBar from "./components/NavBar/NavBar";
-import Slideshow from "./components/Slideshow/Slideshow";
-import images from "./assets/img/promotions/promotions.js";
-import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import "App.css";
+import Header from "components/Header/Header";
+import Footer from "components/Footer/Footer";
+import ItemListContainer from "Containers/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "Containers/ItemDetailContainer/ItemDetailContainer";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="Wrapper">
-      <header>
-        <NavBar/>
-        <Slideshow images={images} autoplay={true} controls={true}/>
-      </header>
-      <main>
-        <ItemListContainer/>
-        <hr/>
-        <p style={{textAlign: "center"}}>Oportunamente se moverá este item en su respectiva página usando react router</p>
-        <ItemDetailContainer id={5}/>
-      </main>
-      <Footer/>
+      <BrowserRouter>
+        <Header/>
+        <main>
+          <Routes>
+            <Route path="/" element={<ItemListContainer categoryFilter={false}/>}/>
+            <Route path="/item/:id" element={<ItemDetailContainer />}/>
+            <Route path="/category/:id" element={<ItemListContainer categoryFilter={true}/>}/>
+            <Route path="*" element={<Navigate replace to="/"/>}/>
+          </Routes>
+        </main>
+        <Footer/>
+      </BrowserRouter>
     </div>
   );
 }

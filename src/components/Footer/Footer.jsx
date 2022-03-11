@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {  faFacebookF, faInstagram, faWhatsapp, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import {  faFacebookF, faInstagram, faWhatsapp, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import NewsletterAdd from "./NewsletterAdd/NewsletterAdd";
 import styles from "./styles.module.css";
 
@@ -18,14 +18,14 @@ function Footer(props) {
           </ul>
           <hr className={styles.Footer__content__hr}/>
           <ul className={styles.Footer__content__row}>
-                <li>Copyright © {new Date().getFullYear()} Computahorra</li>
-                <li>Desarrollado por Selien Yorbandi</li>
+            <li>Copyright © {new Date().getFullYear()} Computahorra</li>
+            <li>Desarrollado por Selien Yorbandi</li>
           </ul>
           <ul className={styles.Footer__content__row}> 
-                <li><FontAwesomeIcon icon={faFacebookF} size="2xl"/></li>
-                <li><FontAwesomeIcon icon={faInstagram} size="2xl"/></li>
-                <li><FontAwesomeIcon icon={faWhatsapp} size="2xl"/></li>
-                <li><FontAwesomeIcon icon={faYoutube} size="2xl"/></li>
+            <li><FontAwesomeIcon icon={faFacebookF} size="2xl"/></li>
+            <li><FontAwesomeIcon icon={faInstagram} size="2xl"/></li>
+            <li><FontAwesomeIcon icon={faWhatsapp} size="2xl"/></li>
+            <li><FontAwesomeIcon icon={faYoutube} size="2xl"/></li>
           </ul>
         </div>
       </footer>

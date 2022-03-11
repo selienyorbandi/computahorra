@@ -2,7 +2,7 @@ import styles from "./styles.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import Button from "../../Button/Button";
+import Button from "components/Button/Button";
 
 function ItemCount({stock, initial, onAdd, message, size, primary, expanded}){
     const [amount, setAmount] = useState(initial);

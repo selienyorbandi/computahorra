@@ -15,6 +15,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .Item__img {
@@ -28,7 +29,10 @@
     font-weight: 400;
     margin: .5rem 0;
 }
-
+.Item > a {
+    color: #000;
+    text-decoration: none;
+}
 .Item__title {
     font-size: 1.1rem;
     font-weight: 400;

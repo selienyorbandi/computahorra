@@ -30,7 +30,6 @@
 
 .NavBar__brandLogo {
     width: calc(120px + 4vw);
-    cursor: pointer;
 }
 
 .NavBar__brandLogo>img {
@@ -67,7 +66,7 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
- }
+}
 
 .NavBar__icons>span:nth-child(2) {
     display: none;
@@ -90,21 +89,12 @@
     overflow-y: auto;
 }
 
-li {
-    list-style: none;
-}
-
-.NavBar__menu>li,
-.NavBar__menu>p {
-    list-style: none;
-    cursor: pointer;
-}
-
 .NavBar__list {
     display: none;
 }
 
-.NavBar__list>li {
+.NavBar__list li,
+.NavBar__menu li {
     cursor: pointer;
 }
 

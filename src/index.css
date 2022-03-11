@@ -1,23 +1,23 @@
 @import-normalize;
-@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
 
 :root {
-    --primary-color: #6C2F9A;
-    --secondary-color: #B192C8;
-    --light-color: #F5F5F5;
-    --lighter-color: #fbfbfb;
-    --dark-color: #2B272E;
-    --darkest-color: #171717;
+  --primary-color: #6c2f9a;
+  --secondary-color: #b192c8;
+  --light-color: #f5f5f5;
+  --lighter-color: #fbfbfb;
+  --dark-color: #2b272e;
+  --darkest-color: #171717;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Karla', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Karla", sans-serif;
 }
 
 body {
-    background: var(--light-color);
-    overflow-x: hidden;
+  background: var(--light-color);
+  overflow-x: hidden;
 }
