@@ -40,3 +40,15 @@
     min-height: 60px;
 }
 
+.Item__Btns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: .4rem;
+    margin-top: 1rem;
+}
+.Item__Btns>div button,
+.Item__Btns>a button  {
+    width: 109px;
+}
+
