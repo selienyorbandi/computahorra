@@ -1,13 +1,8 @@
+import Button from "components/Button/Button";
 import { Link } from "react-router-dom";
-import ItemCount from "./ItemCount/ItemCount";
 import styles from "./styles.module.css";
 
 function Item({title, price, thumbnail, stock, id}) {
-    
-  function addItem(amount, stock){
-    if (amount <= stock)
-      console.log(`${amount} ${title} en el carrito`);
-  }
 
   return(
     
@@ -21,7 +16,14 @@ function Item({title, price, thumbnail, stock, id}) {
       <Link to={`/item/${id}`}>
         <h2 className={styles.Item__title}>{title}</h2>
       </Link>
-      <ItemCount stock={stock} initial={1} onAdd={addItem} message="Añadir al carrito" size="sm" primary={true}/>
+      <div className={styles.Item__Btns}>
+        <Link to="/cart">
+          <Button message={"Comprar ahora"} onClick={()=>console.log("Esto agrega 1 unidad del producto al carrito, la confirma y redirige a la sección de compra")} primary={true}/>
+        </Link>
+        <Link to={`/item/${id}`}>
+          <Button message={"Ver detalle"} primary={false}/>
+        </Link>
+      </div>
     </div>
   );
 }
