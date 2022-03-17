@@ -38,7 +38,7 @@ function NavBar(){
           <div className={styles.NavBar__icons}>
             <span><FontAwesomeIcon icon={faMagnifyingGlass} /></span>
             <span><FontAwesomeIcon icon={faUser} /></span>
-            <CartWidget totalItems={0}/>
+            <CartWidget/>
           </div>
         </div>
       </div>

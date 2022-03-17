@@ -1,10 +1,14 @@
+import Button from "components/Button/Button";
+import { useCartContext } from "context/CartContext";
 import styles from "./styles.module.css";
 
 function Cart() {
+  const { cartList } = useCartContext();
+  
   return (
     <div className={styles.Cart}>
-      <h1>Carrito</h1>
-      <p>Este será el carrito en su versión expandida con los pasos a seguir para realizar la compra</p>
+      <h1>Carrito de compras</h1>
+      <Button message="Ver CartList en consola" onClick={()=>console.log(cartList)} primary></Button>
     </div>
   );
 }
