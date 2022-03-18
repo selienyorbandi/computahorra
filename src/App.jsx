@@ -6,15 +6,18 @@ import ItemDetailContainer from "containers/ItemDetailContainer/ItemDetailContai
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Cart from "components/Cart/Cart";
 import { CartContextProvider } from "context/CartContext";
+import ScrollToTop from "components/ScrollToTop/scrollToTop";
 
 function App() {
   return (
     <div className="Wrapper">
       <CartContextProvider>
         <BrowserRouter>
+          <ScrollToTop/>
           <Header/>
           <main>
             <Routes>
+              
               <Route path="/" element={<ItemListContainer categoryFilter={false}/>}/>
               <Route path="/item/:id" element={<ItemDetailContainer />}/>
               <Route path="/category/:id" element={<ItemListContainer categoryFilter={true}/>}/>
