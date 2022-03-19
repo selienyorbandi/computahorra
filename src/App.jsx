@@ -17,7 +17,6 @@ function App() {
           <Header/>
           <main>
             <Routes>
-              
               <Route path="/" element={<ItemListContainer categoryFilter={false}/>}/>
               <Route path="/item/:id" element={<ItemDetailContainer />}/>
               <Route path="/category/:id" element={<ItemListContainer categoryFilter={true}/>}/>

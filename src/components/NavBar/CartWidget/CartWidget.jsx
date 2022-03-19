@@ -11,10 +11,10 @@ function CartWidget(){
   return(
     <Link to="/cart" className={styles.CartWidget}>
       <FontAwesomeIcon icon={faCartShopping} className={styles.FontAwesomeIcon}/>
-      <div className={styles.CartWidget__ItemCount}>{countTotalQuantity(cartList)}</div>
+      {cartList.length ? <div className={styles.CartWidget__ItemCount}>{countTotalQuantity(cartList)}</div> : <></> }
     </Link>
   );
     
 }
-
+  
 export default CartWidget;

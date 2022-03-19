@@ -21,9 +21,10 @@
 
 @media screen and (min-width: 1100px) {
   .NavBar_categories {
+    width: 250px;
     position: absolute;
     top: 0;
-    margin-top: 135px;
+    margin-top: 40px;
   }
 
   .NavBar_categories__baloon {
@@ -47,69 +48,3 @@
     border-bottom: 10px solid var(--light-color);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-/* 
-.NavBar_categories {
-    display: flex;
-    flex-direction: column;
-    padding: 0.8rem 0 0 0.8rem;
-    gap: 1.1rem;
-  }
-  .NavBar_categories > div {
-    display: none;
-  }
-  
-  .NavBar__categoriesDropdown {
-    font-size: 1.3rem;
-  }
-  .NavBar_categories > a {
-    text-decoration: none;
-    color: #000;
-  }
-  
-  @media screen and (min-width: 1100px) {
-    .NavBar_categories {
-      display: inline;
-      position: absolute;
-      margin-top: 370px;
-      cursor: pointer;
-    }
-    .NavBar_categories > a p {
-      padding: 1rem;
-      background: var(--light-color);
-      border-left: var(--primary-color) solid 1px;
-      border-right: var(--primary-color) solid 1px;
-      color: #000;
-      cursor: pointer;
-    }
-    .NavBar_categories:first-of-type {
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-    }
-    .NavBar_categories:last-of-type {
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-      border-bottom: var(--primary-color) solid 1px;
-      box-shadow: none;
-    }
-    .NavBar_categories > div {
-      display: flex;
-      width: 0;
-      z-index: 99999;
-      margin: auto;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-bottom: 10px solid var(--light-color);
-    }
-  }
-   */

@@ -43,14 +43,16 @@ function NavBar(){
         </div>
       </div>
       <ul className={styles.NavBar__list}>
-        <NavLink to="/">Inicio</NavLink>
-        <li onClick={handleCategoriesClick}>Categorías&nbsp;<FontAwesomeIcon icon={faCaretDown} className={styles.NavBar__categories}/>
-          {openCategories ? <CategoriesNavBar categories={categories}/> : null}
-        </li>
-        <li>Armá tu pc</li>
-        <li>Centro de ayuda</li>
-        <li>Nosotros</li>
-        <li>Contacto</li>
+        <div className={styles.NavBar__list__content}>
+          <NavLink to="/">Inicio</NavLink>
+          <li onClick={handleCategoriesClick}>Categorías&nbsp;<FontAwesomeIcon icon={faCaretDown} className={styles.NavBar__categories}/>
+            {openCategories ? <CategoriesNavBar categories={categories}/> : null}
+          </li>
+          <li>Armá tu pc</li>
+          <li>Centro de ayuda</li>
+          <li>Nosotros</li>
+          <li>Contacto</li>
+        </div>
       </ul>
       {openMenu ? 
         <ul className={styles.NavBar__menu}>

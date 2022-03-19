@@ -1,8 +1,8 @@
 [
-    {"id": "computadoras-armadas", "name": "Computadoras armadas"},
-    {"id": "notebooks", "name": "Notebooks"},
-    {"id": "componentes-pc", "name": "Componentes de pc"},
-    {"id": "perifericos", "name": "Periféricos"},
     {"id": "accesorios", "name": "Accesorios"},
-    {"id": "monitores", "name": "Monitores"}
+    {"id": "componentes-pc", "name": "Componentes de pc"},
+    {"id": "computadoras-armadas", "name": "Computadoras armadas"},
+    {"id": "monitores", "name": "Monitores"},
+    {"id": "notebooks", "name": "Notebooks"},
+    {"id": "perifericos", "name": "Periféricos"}
 ]

@@ -18,8 +18,8 @@ function Footer(props) {
           </ul>
           <hr className={styles.Footer__content__hr}/>
           <ul className={styles.Footer__content__row}>
-            <li>Copyright © {new Date().getFullYear()} Computahorra</li>
-            <li>Desarrollado por Selien Yorbandi</li>
+            <li><a href="https://www.linkedin.com/in/selien-yorbandi-92a582210/" target="_blank" rel="noreferrer">Copyright © {new Date().getFullYear()} Computahorra</a></li>
+            <li><a href="https://github.com/selienyorbandi" target="_blank" rel="noreferrer">Desarrollado por Selien Yorbandi</a></li>
           </ul>
           <ul className={styles.Footer__content__row}> 
             <li><FontAwesomeIcon icon={faFacebookF} size="2xl"/></li>

@@ -9,8 +9,7 @@ function Header() {
       <NavBar/>
       <Routes>
         <Route path="/" element={ <Slideshow images={images} autoplay controls /> }/>
-        <Route path="/category/*" element={ <Slideshow images={images} autoplay controls /> }/>
-        <Route path="*" element={ <div></div> }/>
+        <Route path="*" element={ <></> }/>
       </Routes>
     </header>
   );

@@ -1,4 +1,4 @@
-import products from "mockDb/productos-destacados.json";
+import products from "mockDb/productos.json";
 
 export const getItems = new Promise((resolve, reject)=> {
   const status = "200";

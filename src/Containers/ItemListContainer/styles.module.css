@@ -1,5 +1,11 @@
-.ItemListContainer{
-    max-width: 1100px;
+.MainContainer {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    gap: 4rem;
+}
+
+.ItemListContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -10,11 +16,13 @@
 .MainTitle {
     max-width: 1100px;
     margin: 2rem auto 0 auto;
-    text-align: center;
     font-weight: 600;
 }
+
 @media screen and (min-width: 1100px) {
-    .MainTitle {
-        margin: 2rem auto 0 auto;
+    .ItemListContainer {
+        padding-bottom: 2rem;
+        justify-content: start;
+        margin: 2rem 0;
     }
 }
