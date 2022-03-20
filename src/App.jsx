@@ -9,6 +9,7 @@ import { CartContextProvider } from "context/CartContext";
 import ScrollToTop from "components/ScrollToTop/scrollToTop";
 
 function App() {
+
   return (
     <div className="Wrapper">
       <CartContextProvider>

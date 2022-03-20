@@ -6,7 +6,7 @@ import styles from "./styles.module.css";
 
 function Item({item}) {
   const {title, price, thumbnail, id} = item;
-  const { addItem } = useCartContext();
+  const { buyNow } = useCartContext();
 
   return(
     
@@ -22,7 +22,7 @@ function Item({item}) {
       </Link>
       <div className={styles.Item__Btns}>
         <Link to="/cart">
-          <Button message={"Comprar ahora"} onClick={()=> addItem(item,1)} primary={true}/>
+          <Button message={"Comprar ahora"} onClick={()=> buyNow(item)} primary={true}/>
         </Link>
         <Link to={`/item/${id}`}>
           <Button message={"Ver detalle"} primary={false}/>
