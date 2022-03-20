@@ -7,6 +7,9 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Cart from "components/Cart/Cart";
 import { CartContextProvider } from "context/CartContext";
 import ScrollToTop from "components/ScrollToTop/scrollToTop";
+import PoliticaDePrivacidad from "pages/PoliticaDePrivacidad/PoliticaDePrivacidad";
+import TerminosYCondiciones from "pages/TerminosYCondiciones/TerminosYCondiciones";
+import GarantiaYDevoluciones from "pages/GarantiaYDevoluciones/GarantiaYDevoluciones";
 
 function App() {
 
@@ -22,6 +25,9 @@ function App() {
               <Route path="/item/:id" element={<ItemDetailContainer />}/>
               <Route path="/category/:id" element={<ItemListContainer categoryFilter={true}/>}/>
               <Route path="/cart" element={<Cart/>}/>
+              <Route path="/politica-de-privacidad/*" element={<PoliticaDePrivacidad/>}/>
+              <Route path="/terminos-y-condiciones/*" element={<TerminosYCondiciones/>}/>
+              <Route path="/garantia-y-devoluciones/*" element={<GarantiaYDevoluciones/>}/>
               <Route path="*" element={<Navigate replace to="/"/>}/>
             </Routes>
           </main>

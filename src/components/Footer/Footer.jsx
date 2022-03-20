@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {  faFacebookF, faInstagram, faWhatsapp, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import NewsletterAdd from "./NewsletterAdd/NewsletterAdd";
 import styles from "./styles.module.css";
+import { Link } from "react-router-dom";
 
 function Footer(props) {
   return (
@@ -11,10 +12,10 @@ function Footer(props) {
         <div className={styles.Footer__content}>
           <ul className={styles.Footer__content__row}>
             <li>Botón de arrepentimiento</li>
-            <li>Términos y condiciones</li>
-            <li>Política de privacidad</li>
-            <li>Garantía y devoluciones</li>
-            <li>Preguntas frecuentes</li>
+            <Link to="/terminos-y-condiciones">Términos y condiciones</Link>
+            <Link to="/politica-de-privacidad">Política de privacidad</Link>
+            <Link to="/garantia-y-devoluciones">Garantía y devoluciones</Link>
+            <Link to="/ayuda">Preguntas frecuentes</Link>
           </ul>
           <hr className={styles.Footer__content__hr}/>
           <ul className={styles.Footer__content__row}>

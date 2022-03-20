@@ -1,0 +1,16 @@
+.StaticPages {
+    margin: 3rem 0;
+    padding: 1rem;
+}
+.StaticPages h1,
+.StaticPages h2,
+.StaticPages p {
+    margin: 1rem 0;
+}
+
+@media screen and (min-width: 900px) {
+    .StaticPages {
+        margin: 2rem 0;
+        padding-bottom: 4rem;
+    }
+}

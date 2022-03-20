@@ -49,8 +49,8 @@ function NavBar(){
             {openCategories ? <CategoriesNavBar categories={categories}/> : null}
           </li>
           <li>Armá tu pc</li>
-          <li>Centro de ayuda</li>
-          <li>Nosotros</li>
+          <NavLink to="/ayuda">Centro de ayuda</NavLink>
+          <NavLink to="/nosotros">Nosotros</NavLink>
           <li>Contacto</li>
         </div>
       </ul>
@@ -63,8 +63,8 @@ function NavBar(){
           </li>
           <NavLink to="/">Inicio</NavLink>
           <li>Armá tu pc</li>
-          <li>Centro de ayuda</li>
-          <li>Nosotros</li>
+          <NavLink to="/ayuda">Centro de ayuda</NavLink>
+          <NavLink to="/nosotros">Nosotros</NavLink>
           <li>Contacto</li>
         </ul>
         : ""}
