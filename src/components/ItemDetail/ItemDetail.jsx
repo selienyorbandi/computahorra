@@ -9,14 +9,14 @@ import styles from "./styles.module.css";
 function ItemDetail({item}) {
   const {title, description, img, stock, price} = item;
   const [selectedCount, setSelectedCount] = useState(null);
-  
+
   const { addItem, buyNow } = useCartContext();
 
   const onAdd = (quantity) => {
     addItem(item, quantity);
     setSelectedCount(true);
   };
-
+  
   return (
     <div className={styles.ItemDetail}>
       <div className={styles.ItemDetail__img}>
@@ -34,7 +34,7 @@ function ItemDetail({item}) {
             </>
             : <>
               <Link to="/cart"><Button message={"Comprar ahora"} onClick={()=>buyNow(item)} primary={true} size="md"/></Link>
-              <ItemCount stock={stock} initial={1} onAdd={onAdd} message="Añadir al carrito" primary={false} expanded={true}/>
+              <ItemCount stock={stock} initial={1} onAdd={onAdd} message="Añadir al carrito" primary={false} expanded={true} item={item}/>
             </>
           }
         </div>

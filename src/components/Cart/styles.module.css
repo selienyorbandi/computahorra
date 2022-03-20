@@ -3,6 +3,13 @@
     text-align: center;
 }
 
+.Cart__items,
+.Cart__full__details {
+    background: #fff;
+    padding: 1rem;
+    border: solid 1px rgba(128, 128, 128, 0.192);
+    border-radius: 5px;
+}
 .Cart__empty {
     font-size: 1.4rem;
     display: flex;
@@ -22,6 +29,10 @@
     align-items: center;
     padding: 1rem;
     gap: 1rem;
+}
+
+.Cart h1 {
+    margin-bottom: 1rem;
 }
 
 .Cart__full__details h2 {
@@ -56,9 +67,6 @@
     }
 
     .Cart__full__details {
-        background: #fff;
-        border: solid 1px rgba(128, 128, 128, 0.192);
-        border-radius: 5px;
         width: 300px;
         height: 360px;
         display: flex;

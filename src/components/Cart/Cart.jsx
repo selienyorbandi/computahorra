@@ -18,7 +18,7 @@ function Cart() {
           <>
             <h1>Carrito de compras</h1>
             <div className={styles.Cart__full}>
-              <div>
+              <div className={styles.Cart__items}>
                 {cartList.map(item => <CartItem item={item} key={item.id}/>)}
               </div>
               <div className={styles.Cart__full__details}>

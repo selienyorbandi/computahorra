@@ -8,7 +8,7 @@ export function CartContextProvider({children}) {
   
   const addItem = (item, quantity) => {
     const itemToAdd = Object.assign(item, {quantity: quantity});
-    isInCart(item.id) ? changeQuantity(item.id, hasStock(item, quantity) ? item.quantity + quantity : item.stock) : setCartList([...cartList, itemToAdd]);
+    isInCart(item.id) ? changeQuantity(item.id, quantity) : setCartList([...cartList, itemToAdd]);
   };
 
   const buyNow = (item) => {
@@ -24,10 +24,6 @@ export function CartContextProvider({children}) {
 
   const isInCart = itemId => {
     return cartList.find(item => item.id === itemId); 
-  };
-
-  const hasStock = (item, quantity) => {
-    return item.quantity + quantity <= item.stock;
   };
 
   const clearCart = () => {
@@ -51,9 +47,10 @@ export function CartContextProvider({children}) {
       addItem,
       removeItem,
       clearCart,
-      changeQuantity,
       totalPrice,
-      buyNow
+      buyNow,
+      isInCart,
+      changeQuantity
     }}>
       {children}
     </CartContext.Provider>
