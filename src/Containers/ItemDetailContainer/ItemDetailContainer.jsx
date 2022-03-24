@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { getItems } from "helpers/getItems";
 import ItemDetail from "components/ItemDetail/ItemDetail";
 import Loader from "components/Loader/Loader";
 import { useParams } from "react-router-dom";
 import styles from "./styles.module.css";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 function ItemDetailContainer() {
   const [item, setItem] = useState({});
@@ -11,13 +11,13 @@ function ItemDetailContainer() {
   const { id } = useParams();
 
   useEffect(() => {
-    setTimeout(()=>{
-      getItems
-        .then(response => response.find(item => item.id.toString() === id)) 
-        .then(result => setItem(result))
-        .catch(err => console.log(err))
-        .finally(setLoading(false));
-    },400);
+    setLoading(true);
+    const db = getFirestore();
+    const queryDb = doc(db,"items", id);
+    getDoc(queryDb)
+      .then(response => setItem({id: response.id, ...response.data()}))
+      .catch(err => console.log(err))
+      .finally(setLoading(false));
   }, [id]);
 
   return (
@@ -26,5 +26,5 @@ function ItemDetailContainer() {
     </article>
   );
 }
-
+                                     
 export default ItemDetailContainer;

@@ -7,7 +7,7 @@ function Controls({toLeft, toRight}) {
       <button className={styles.Control__right} onClick={()=>toRight()}>{">"}</button>
     </>
         
-  )
+  );
 }
 
 export default Controls;

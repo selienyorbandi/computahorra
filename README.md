@@ -6,7 +6,9 @@ Computahorra es una tienda digital de productos de informática. Es un sitio web
 
 ## Acceso - Deploy  
 
-[Ingresa al sitio aquí](https://computahorra.netlify.app/) - alojado en Netlify
+[Ingresa al sitio aquí](https://computahorra.netlify.app/)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c9b66c7e-af3e-4903-83f6-eaeedc784846/deploy-status)](https://computahorra.netlify.app/)
 
 ## Dependencias
 
@@ -14,7 +16,8 @@ Computahorra es una tienda digital de productos de informática. Es un sitio web
 
 - React Router V6, para realizar la navegación de SPA
 - React FontAwesome, por la facilidad para insertar íconos y modificar su apariencia al comportarse como una tipografía.
-  
+- Firebase, como solución sencilla a la necesidad de una base de datos
+
 ### De desarrollo
 
 - Eslint, para uniformidad en el código.

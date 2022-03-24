@@ -5,15 +5,15 @@ import styles from "./styles.module.css";
 function NewsletterAdd() {
   return (
     <div className={styles.NewsletterAdd}>
-        <div className={styles.NewsletterAdd__content}>
+      <div className={styles.NewsletterAdd__content}>
             Recibí nuestras novedades <FontAwesomeIcon icon={faEnvelope} className={styles.FontAwesomeIcon}/>
-            <div className={styles.NewsletterAdd__content__bar}>
-                <input type="textarea"  placeholder="Ingresá tu email" className={styles.NewsletterAdd__content__input}></input>
-                <button type="submit">Suscribite</button>
-            </div>
+        <div className={styles.NewsletterAdd__content__bar}>
+          <input type="textarea"  placeholder="Ingresá tu email" className={styles.NewsletterAdd__content__input}></input>
+          <button type="submit">Suscribite</button>
         </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default NewsletterAdd
+export default NewsletterAdd;

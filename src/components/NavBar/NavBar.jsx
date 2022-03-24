@@ -6,20 +6,24 @@ import { faUser, faBagShopping, faCaretDown, faMagnifyingGlass } from "@fortawes
 import CategoriesNavBar from "./CategoriesNavBar/CategoriesNavBar";
 import SearchBar from "./SearchBar/SearchBar";
 import CartWidget from "./CartWidget/CartWidget";
-import { getCategories } from "helpers/getCategories";
 import { NavLink } from "react-router-dom";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 function NavBar(){
-
-  useEffect(() => {
-    getCategories
-      .then(res => setCategories(res));
-  }, []);
   
   const [openMenu, setOpenMenu] = useState(false);
   const [openCategories, setOpenCategories] = useState(false);
   const [categories, setCategories] = useState([]);
     
+  useEffect(() => {
+    const db = getFirestore();
+    const queryCollectionCategories = collection(db, "categories");
+    getDocs(queryCollectionCategories)
+      .then(response => response.docs.map(category => ({id: category, ...category.data()})))
+      .then(result => setCategories(result))
+      .catch(error => console.log(error));
+  }, []);
+
   return(
     <nav className={styles.Navigation}>
       <div className={styles.Navigation__NavBarCnt}>

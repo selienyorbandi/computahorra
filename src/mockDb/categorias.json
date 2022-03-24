@@ -1,8 +1,0 @@
-[
-    {"id": "accesorios", "name": "Accesorios"},
-    {"id": "componentes-pc", "name": "Componentes de pc"},
-    {"id": "computadoras-armadas", "name": "Computadoras armadas"},
-    {"id": "monitores", "name": "Monitores"},
-    {"id": "notebooks", "name": "Notebooks"},
-    {"id": "perifericos", "name": "Periféricos"}
-]

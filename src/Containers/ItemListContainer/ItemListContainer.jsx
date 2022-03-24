@@ -1,12 +1,10 @@
-import { getBrands } from "helpers/getBrands";
-import { getCategories } from "helpers/getCategories";
-import { getItems } from "helpers/getItems";
 import { useParams} from "react-router-dom";
 import { useState, useEffect } from "react";
 import FilterBar from "components/FilterBar/FilterBar";
 import ItemList from "components/ItemList/ItemList";
 import Loader from "components/Loader/Loader";
 import styles from "./styles.module.css";
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 
 function ItemListContainer({categoryFilter = false}){
   const [items, setItems] = useState([]);
@@ -14,31 +12,36 @@ function ItemListContainer({categoryFilter = false}){
   const { id: categoryId }  = useParams();
   const [categories, setCategories] = useState(null);
   const [brands, setBrands] = useState([]);
-
-  useEffect(() => {
-    if (categoryFilter) {
-      getCategories
-        .then(res => setCategories(res));
-      getBrands
-        .then(res => setBrands(res))
-        .catch(error => console.log(error));
-    }
-  }, [categoryFilter, categories, categoryId]);
   
   useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      getItems
-        .then(
-          categoryFilter ? res => res.filter(items => items.categoryId.toString() === categoryId ) 
-            : res => res.filter(items => items.trending)
-        )
-        .then(result => setItems(result))
-        .catch(error => console.log(error))
-        .finally(setLoading(false));
-    }, 200);
-  }, [categoryId, categoryFilter]);
+    if(categoryFilter) {
+      const db = getFirestore();
+      const queryCollectionCategories = collection(db, "categories");
+      const queryCollectionBrands = collection(db, "brands");
+      getDocs(queryCollectionCategories)
+        .then(response => response.docs.map(category => ({id: category, ...category.data()})))
+        .then(result => setCategories(result))
+        .catch(error => console.log(error));
+      getDocs(queryCollectionBrands)
+        .then(response => response.docs.map(brand => ({id: brand, ...brand.data()})))
+        .then(result => setBrands(result))
+        .catch(error => console.log(error));
+    }
+  }, [categoryFilter]);
 
+  useEffect(() => {
+    setLoading(true);
+    const db = getFirestore();
+    const queryCollection = collection(db, "items");
+    const queryTrendings =  query(queryCollection, where("trending", "==", true));
+    const queryFilter = query(queryCollection, where("categoryId", "==", `${categoryId}`));
+    getDocs(categoryFilter ? queryFilter : queryTrendings)
+      .then(response => response.docs.map(item => ({id: item.id, ...item.data()})))
+      .then(result => setItems(result))
+      .catch(error => console.log(error))
+      .finally(setLoading(false));
+  }, [categoryFilter, categoryId]);
+  
   return(
     <section>
       { loading ? <Loader/> : 
