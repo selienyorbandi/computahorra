@@ -30,7 +30,6 @@ function ItemListContainer({categoryFilter = false}){
   }, [categoryFilter]);
 
   useEffect(() => {
-    setLoading(true);
     const db = getFirestore();
     const queryCollection = collection(db, "items");
     const queryTrendings =  query(queryCollection, where("trending", "==", true));
@@ -39,7 +38,7 @@ function ItemListContainer({categoryFilter = false}){
       .then(response => response.docs.map(item => ({id: item.id, ...item.data()})))
       .then(result => setItems(result))
       .catch(error => console.log(error))
-      .finally(setLoading(false));
+      .finally(()=> setLoading(false));
   }, [categoryFilter, categoryId]);
   
   return(

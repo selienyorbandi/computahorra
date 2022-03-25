@@ -17,7 +17,7 @@ function ItemDetailContainer() {
     getDoc(queryDb)
       .then(response => setItem({id: response.id, ...response.data()}))
       .catch(err => console.log(err))
-      .finally(setLoading(false));
+      .finally(()=> setLoading(false));
   }, [id]);
 
   return (
