@@ -8,8 +8,8 @@
     justify-content: center;
     gap: 1rem 4rem;
     background: #fff;
-    box-shadow: rgba(0, 0, 0, 0.144) 5px 6px 10px;
-    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.144) 1px 1px 6px;
+    border-radius: 5px;
 }
 
 .ItemDetail__img {

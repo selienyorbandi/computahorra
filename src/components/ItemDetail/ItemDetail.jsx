@@ -12,7 +12,7 @@ function ItemDetail({item}) {
 
   const { addItem, buyNow } = useCartContext();
 
-  const onAdd = (quantity) => {
+  const onAdd = quantity => {
     addItem(item, quantity);
     setSelectedCount(true);
   };

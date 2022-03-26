@@ -8,9 +8,15 @@ export function CartContextProvider({children}) {
   
   const addItem = (item, quantity) => {
     const itemToAdd = Object.assign(item, {quantity: quantity});
-    isInCart(item.id) ? changeQuantity(item.id, quantity) : setCartList([...cartList, itemToAdd]);
+    if (isInCart(item.id)) {
+      let newQuantity;
+      item.stock > quantity + getCurrentQuantity(item.id) ? newQuantity = quantity + getCurrentQuantity(item.id) : newQuantity = item.stock;
+      changeQuantity(item.id, newQuantity);
+    } else {
+      setCartList([...cartList, itemToAdd]);
+    }
   };
-
+  
   const buyNow = (item) => {
     clearCart();
     const itemToAdd = Object.assign(item, {quantity: 1});
@@ -41,16 +47,26 @@ export function CartContextProvider({children}) {
     return total;
   };
 
+  const totalQuantity = () => {
+    let total = 0;
+    cartList.forEach(item => total += item.quantity);
+    return total;
+  };
+
+  const getCurrentQuantity = itemId => {
+    return cartList.find(item => item.id === itemId).quantity;
+  };
+
   return (
     <CartContext.Provider value={{
       cartList,
       addItem,
       removeItem,
       clearCart,
+      changeQuantity,
       totalPrice,
-      buyNow,
-      isInCart,
-      changeQuantity
+      totalQuantity,
+      buyNow
     }}>
       {children}
     </CartContext.Provider>
