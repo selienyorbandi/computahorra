@@ -14,7 +14,7 @@ function Cart() {
   return (
     <div className={styles.Cart}>
       {
-        cartList.length ? 
+        cartList.length > 0? 
           <>
             <h1>Carrito de compras</h1>
             <div className={styles.Cart__full}>
