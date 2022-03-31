@@ -1,0 +1,57 @@
+.Cart__full__details,  .CheckoutSum {
+    background: #fff;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.144) 1px 1px 6px;
+    border-radius: 5px;
+}
+.Cart__full__details, .CheckoutSum  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+}
+.Cart__full__details h2 {
+    font-size: 1.8rem;
+}
+
+.Cart__full__details h4 {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.Cart__full__details p {
+    cursor: pointer;
+    width: 250px;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.Cart__full__details p:hover {
+    color: crimson;
+}
+
+@media screen and (min-width: 1100px) {
+
+    .Cart__full {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .Cart__full__details, .CheckoutSum {
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1rem;
+        margin-left: 1rem;
+    }
+    .Cart__full__details {
+        width: 300px;
+        height: 360px;
+    }
+    .CheckoutSum {
+        width: 600px;
+        height: 400px;
+    }
+}

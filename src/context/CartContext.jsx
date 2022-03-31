@@ -5,6 +5,8 @@ export const useCartContext = () => useContext(CartContext);
 
 export function CartContextProvider({children}) {
   const [cartList, setCartList] = useState([]);
+  const [isUserData, setIsUserData] = useState(false);
+  const [userData, setUserData] = useState(false);
   
   const addItem = (item, quantity) => {
     const itemToAdd = Object.assign(item, {quantity: quantity});
@@ -66,7 +68,11 @@ export function CartContextProvider({children}) {
       changeQuantity,
       totalPrice,
       totalQuantity,
-      buyNow
+      buyNow,
+      setIsUserData,
+      isUserData,
+      setUserData,
+      userData
     }}>
       {children}
     </CartContext.Provider>

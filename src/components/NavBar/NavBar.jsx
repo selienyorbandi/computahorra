@@ -52,7 +52,6 @@ function NavBar(){
           <li onClick={handleCategoriesClick}>Categorías&nbsp;<FontAwesomeIcon icon={faCaretDown} className={styles.NavBar__categories}/>
             {openCategories ? <CategoriesNavBar categories={categories}/> : null}
           </li>
-          <li>Armá tu pc</li>
           <NavLink to="/ayuda">Centro de ayuda</NavLink>
           <NavLink to="/nosotros">Nosotros</NavLink>
           <li>Contacto</li>
@@ -66,7 +65,6 @@ function NavBar(){
             {openCategories ? <CategoriesNavBar categories={categories}/> : null}
           </li>
           <NavLink to="/">Inicio</NavLink>
-          <li>Armá tu pc</li>
           <NavLink to="/ayuda">Centro de ayuda</NavLink>
           <NavLink to="/nosotros">Nosotros</NavLink>
           <li>Contacto</li>
