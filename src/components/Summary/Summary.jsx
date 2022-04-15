@@ -5,9 +5,11 @@ import { Link } from "react-router-dom";
 import { formatPrice } from "utils/formatPrice";
 import styles from "./styles.module.css";
 import SummItem from "./SummItem/SummItem";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
-function Summary({cart = false, checkout = false, order = {}}) {
-  const {  totalPrice } = useCartContext();
+function Summary({cart = false, checkout = false, order = {}, children}) {
+  const {  totalPrice, clearCart } = useCartContext();
 
   return (
     <div className={cart ? styles.Cart__full__details : styles.CheckoutSum}>
@@ -24,6 +26,10 @@ function Summary({cart = false, checkout = false, order = {}}) {
           </>
           : <></>
       }
+      {cart ? <p onClick={()=> clearCart()}>Vaciar carrito <FontAwesomeIcon icon={faTrashAlt}/></p> : <></>}
+      <div className={styles.OptionalChild}>
+        {children}
+      </div>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./styles.module.css";
 
 function FormStepper({steps, currentStep = 0}) {
-
+  
   return (
     <div className={styles.FormStepper}>
       {steps.map((item, index) => <div key={index}>

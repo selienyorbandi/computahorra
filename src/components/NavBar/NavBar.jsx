@@ -9,6 +9,7 @@ import CartWidget from "./CartWidget/CartWidget";
 import { NavLink } from "react-router-dom";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { useRef } from "react";
+import UserWidget from "./UserWidget/UserWidget";
 
 function NavBar(){
   
@@ -83,7 +84,7 @@ function NavBar(){
           <SearchBar/>
           <div className={styles.NavBar__icons}>
             <span><FontAwesomeIcon icon={faMagnifyingGlass} /></span>
-            <span><FontAwesomeIcon icon={faUser} /></span>
+            <UserWidget/>
             <CartWidget/>
           </div>
         </div>
@@ -101,7 +102,7 @@ function NavBar(){
       </ul>
       {openMenu ? 
         <ul className={styles.NavBar__menu}>
-          <li>Mi perfil <FontAwesomeIcon icon={faUser}/></li>
+          <NavLink to="/user">Mi perfil <FontAwesomeIcon icon={faUser}/></NavLink>
           <li>Mis compras <FontAwesomeIcon icon={faBagShopping}/></li>
           <li onClick={handleCategoriesClick}>Categorías <FontAwesomeIcon icon={faCaretDown}/>
             {openCategories ? <div ref={categoriesMenuRef}><CategoriesNavBar  categories={categories}/></div>: <></>}

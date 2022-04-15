@@ -27,3 +27,7 @@
 .Button:active {
     background: var(--secondary-color);
 }
+
+.Button:disabled {
+    background: gray;
+}

@@ -1,6 +1,5 @@
 .Cart__full__details,  .CheckoutSum {
     background: #fff;
-    padding: 1rem;
     box-shadow: rgba(0, 0, 0, 0.144) 1px 1px 6px;
     border-radius: 5px;
 }
@@ -24,7 +23,7 @@
 .Cart__full__details p {
     cursor: pointer;
     width: 250px;
-    margin-top: 1rem;
+    margin-top: .5rem;
     text-align: center;
 }
 
@@ -33,25 +32,11 @@
 }
 
 @media screen and (min-width: 1100px) {
-
-    .Cart__full {
-        display: flex;
-        flex-direction: row;
-    }
-
     .Cart__full__details, .CheckoutSum {
-        display: flex;
-        flex-direction: column;
-        padding: 1.5rem;
-        gap: 1rem;
         margin-left: 1rem;
+        padding: 2rem;
     }
-    .Cart__full__details {
-        width: 300px;
-        height: 360px;
-    }
-    .CheckoutSum {
-        width: 600px;
-        height: 400px;
+    .OptionalChild {
+        padding-top: 1rem;
     }
 }

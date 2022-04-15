@@ -14,13 +14,13 @@ Computahorra es una tienda digital de productos de informática. Es un sitio web
 
 ### De producción
 
-- React Router V6, para realizar la navegación de SPA
-- React FontAwesome, por la facilidad para insertar íconos y modificar su apariencia al comportarse como una tipografía.
-- Firebase, como solución sencilla a la necesidad de una base de datos
+- React Router v6.2.2, para realizar la navegación de SPA
+- React FontAwesome v0.1.17, por la facilidad para insertar íconos y modificar su apariencia al comportarse como una tipografía.
+- Firebase v9.6.10, como solución sencilla a la necesidad de una base de datos
 
 ### De desarrollo
 
-- Eslint, para uniformidad en el código.
+- Eslint v8.10.0, para uniformidad en el código.
 
 ## Generalidades
 

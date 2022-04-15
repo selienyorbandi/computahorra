@@ -5,8 +5,6 @@ export const useCartContext = () => useContext(CartContext);
 
 export function CartContextProvider({children}) {
   const [cartList, setCartList] = useState([]);
-  const [isUserData, setIsUserData] = useState(false);
-  const [userData, setUserData] = useState(false);
   
   const addItem = (item, quantity) => {
     const itemToAdd = Object.assign(item, {quantity: quantity});
@@ -23,7 +21,6 @@ export function CartContextProvider({children}) {
     clearCart();
     const itemToAdd = Object.assign(item, {quantity: 1});
     setCartList([itemToAdd]);
-    //Breve timeout y llevará al checkout de pago directamente (cuando esté hecho)
   };
 
   const removeItem = itemId => {
@@ -68,11 +65,7 @@ export function CartContextProvider({children}) {
       changeQuantity,
       totalPrice,
       totalQuantity,
-      buyNow,
-      setIsUserData,
-      isUserData,
-      setUserData,
-      userData
+      buyNow      
     }}>
       {children}
     </CartContext.Provider>

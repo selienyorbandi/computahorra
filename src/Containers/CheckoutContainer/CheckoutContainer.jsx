@@ -3,18 +3,20 @@ import styles from "./styles.module.css";
 import Summary from "components/Summary/Summary";
 import EmptyCart from "components/Cart/EmptyCart/EmptyCart";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
-import Register from "components/Register/Register";
 import Button from "components/Button/Button";
 import { useState } from "react";
+import Login from "components/Login/Login";
+import { useAuthContext } from "context/AuthContext";
 
 function CheckoutContainer() {
-  const { cartList, userData, isUserData, totalPrice } = useCartContext();
+  const { cartList, totalPrice } = useCartContext();
+  const { user } = useAuthContext();
   const [id, setId] = useState("");
 
   const sendOrder = async (e) => {
     let total = totalPrice();
     let orderHardc = {
-      buyer: userData,
+      buyer: {email: user.email, name: user.displayName},
       items: {cartList},
       date: new Date().toLocaleDateString(),
       total: total
@@ -31,16 +33,19 @@ function CheckoutContainer() {
       {
         cartList.length > 0? 
           <div>
-            <div className={styles.Checkout__content}>
-              <Register/> 
-              <div className={styles.registerForm}>
+            <div>
+              <div className={styles.Checkout__content}>
+                <div className={styles.Checkout__UserData}>
+                  {user ? <></> : <Login redirect={false}/>}
+                </div> 
+                <Summary checkout children={<Button message="Realizar compra" onClick={sendOrder} primary disabl={user ? false : true}/>}/>
               </div>
-              <Summary checkout/>
-              
+              <div className={styles.Checkout}>
+                {
+                  id ? <h4>Gracias por tu compra. Pedido: {id}</h4> : <></>
+                }
+              </div>
             </div>
-            { isUserData ? <Button message="Realizar compra" onClick={sendOrder} /> : <></>}
-            <br/>
-            {id ? <p>Gracias por tu compra. Pedido: {id}</p> : <></>}
           </div>
           :
           <EmptyCart/>
