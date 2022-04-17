@@ -1,13 +1,16 @@
-import { useCartContext } from "context/CartContext";
-import styles from "./styles.module.css";
-import Summary from "components/Summary/Summary";
-import EmptyCart from "components/Cart/EmptyCart/EmptyCart";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
-import Button from "components/Button/Button";
 import { useState } from "react";
-import Login from "components/Login/Login";
-import { useAuthContext } from "context/AuthContext";
 import { Link } from "react-router-dom";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
+
+import { useCartContext } from "context/CartContext";
+import { useAuthContext } from "context/AuthContext";
+
+import Summary from "components/Summary/Summary";
+import EmptyCart from "components/EmptyCart/EmptyCart";
+import Button from "components/Button/Button";
+import Login from "components/Login/Login";
+
+import styles from "./styles.module.css";
 
 function CheckoutContainer() {
   const { cartList, totalPrice } = useCartContext();

@@ -1,12 +1,14 @@
-import Button from "components/Button/Button";
-import { useCartContext } from "context/CartContext";
-import React from "react";
 import { Link } from "react-router-dom";
-import { formatPrice } from "utils/formatPrice";
-import styles from "./styles.module.css";
-import SummItem from "./SummItem/SummItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { formatPrice } from "utils/formatPrice";
+
+import { useCartContext } from "context/CartContext";
+
+import Button from "components/Button/Button";
+import SummItem from "./SummItem/SummItem";
+
+import styles from "./styles.module.css";
 
 function Summary({cart = false, checkout = false, order = {}, children}) {
   const {  totalPrice, clearCart } = useCartContext();

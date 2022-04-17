@@ -1,9 +1,12 @@
-import { formatPrice } from "utils/formatPrice";
-import { Link } from "react-router-dom";
-import { useCartContext } from "context/CartContext";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { formatPrice } from "utils/formatPrice";
+
+import { useCartContext } from "context/CartContext";
+
 import Button from "components/Button/Button";
 import ItemCount from "components/ItemCount/ItemCount";
+
 import styles from "./styles.module.css";
 
 function ItemDetail({item}) {

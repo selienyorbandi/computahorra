@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { formatPrice } from "utils/formatPrice";
+
 import styles from "./styles.module.css";
 
 function Item({item}) {
@@ -14,14 +15,6 @@ function Item({item}) {
         </div>
         <span className={styles.Item__price}>{formatPrice(price)}</span>
         <h2 className={styles.Item__title}>{title}</h2>
-        {/* <div className={styles.Item__Btns}>
-        <Link to="/checkout">
-          <Button message={"Comprar ahora"} onClick={()=> buyNow(item)} primary={true}/>
-        </Link>
-        <Link to={`/item/${id}`}>
-          <Button message={"Ver detalle"} primary={false}/>
-        </Link>
-      </div> */}
       </Link>
     </div>
   );

@@ -1,6 +1,7 @@
-import Button from "components/Button/Button";
-import React from "react";
 import { Link } from "react-router-dom";
+
+import Button from "components/Button/Button";
+
 import styles from "./styles.module.css";
 
 function EmptyCart() {

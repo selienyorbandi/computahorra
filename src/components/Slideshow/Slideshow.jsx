@@ -1,10 +1,11 @@
-import React from "react";
-import styles from "./styles.module.css";
 import { useState, useEffect } from "react";
 
 import Controls from "./Controls/Controls";
 
+import styles from "./styles.module.css";
+
 function Slideshow({images, autoplay, controls}) {
+  
   const [slidePosition, setSlidePosition] = useState(0);
   const slides = images;
 

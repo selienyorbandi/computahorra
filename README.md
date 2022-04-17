@@ -1,6 +1,6 @@
 # Computahorra - Ecommerce en React  
 
-Computahorra es una tienda digital de productos de informática. Es un sitio web responsivo -mobile first- que pretende crecer hasta incluir todas las características deseadas de un e-commerce al mismo tiempo que cumpla con los requisitos pedidos por un curso de CoderHouse que estoy realizando.
+Computahorra es una tienda digital de productos de informática. Es un sitio web responsivo -mobile first- que pretende ofrecer características típicas de un e-commerce.
 
 ![Logo de Computahorra](https://raw.githubusercontent.com/selienyorbandi/computahorra/main/src/assets/img/brandLogo.png)
 
@@ -11,7 +11,7 @@ Computahorra es una tienda digital de productos de informática. Es un sitio web
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c9b66c7e-af3e-4903-83f6-eaeedc784846/deploy-status)](https://computahorra.netlify.app/)
 
 ## Dependencias
-
+En detalle en [package.json](https://github.com/selienyorbandi/computahorra/blob/main/package.json)
 ### De producción
 
 - React Router v6.2.2, para realizar la navegación de SPA

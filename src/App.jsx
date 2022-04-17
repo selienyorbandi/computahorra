@@ -1,20 +1,24 @@
-import "App.css";
-import Header from "components/Header/Header";
-import Footer from "components/Footer/Footer";
-import ItemListContainer from "containers/ItemListContainer/ItemListContainer";
-import ItemDetailContainer from "containers/ItemDetailContainer/ItemDetailContainer";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+
 import { CartContextProvider } from "context/CartContext";
 import { AuthContextProvider } from "context/AuthContext";
-import ScrollToTop from "components/ScrollToTop/scrollToTop";
-import PoliticaDePrivacidad from "pages/PoliticaDePrivacidad/PoliticaDePrivacidad";
-import TerminosYCondiciones from "pages/TerminosYCondiciones/TerminosYCondiciones";
-import GarantiaYDevoluciones from "pages/GarantiaYDevoluciones/GarantiaYDevoluciones";
+
+import ItemListContainer from "containers/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "containers/ItemDetailContainer/ItemDetailContainer";
 import CartContainer from "containers/CartContainer/CartContainer";
 import CheckoutContainer from "containers/CheckoutContainer/CheckoutContainer";
 import UserContainer from "containers/UserContainer/UserContainer";
+import PoliticaDePrivacidad from "pages/PoliticaDePrivacidad/PoliticaDePrivacidad";
+import TerminosYCondiciones from "pages/TerminosYCondiciones/TerminosYCondiciones";
+import GarantiaYDevoluciones from "pages/GarantiaYDevoluciones/GarantiaYDevoluciones";
+
+import Header from "components/Header/Header";
+import Footer from "components/Footer/Footer";
+import ScrollToTop from "components/ScrollToTop/scrollToTop";
 import Login from "components/Login/Login";
 import Register from "components/Register/Register";
+
+import "App.css";
 
 function App() {
   

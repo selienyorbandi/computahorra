@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {  faFacebookF, faInstagram, faWhatsapp, faYoutube } from "@fortawesome/free-brands-svg-icons";
+
 import NewsletterAdd from "./NewsletterAdd/NewsletterAdd";
+
 import styles from "./styles.module.css";
-import { Link } from "react-router-dom";
 
 function Footer(props) {
   return (

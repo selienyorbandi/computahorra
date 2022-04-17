@@ -1,18 +1,15 @@
-import React from "react";
 import styles from "../staticPages.module.css";
 
 function GarantiaYDevoluciones() {
   return (
     <div className={styles.StaticPages}>
       <h1>Garantía y devoluciones</h1>
-      <p>
-        Los motivos por los cuales se puede gestionar el cambio o la devolución de un producto son los siguientes:
-        <ul>
-          <li>▪ Producto defectuoso antes de usarse: el producto recibido posee alguna falla o rotura.</li>
-          <li>▪ El producto recibido es diferente al que solicitó.</li>
-        </ul>
-        En caso que un cliente reciba un producto en malas condiciones debe dar aviso dentro de las 48h de recibido el producto. Si el embalaje, caja o protector del producto llegase roto a causa del envío, no se debe abrir ni quitar ninguna faja de seguridad para hacer efectivo el cambio; Ya que al probar el producto o abrir su embalaje se considera que el cliente ha aceptado el producto como se lo entrego y no podrá hacer el cambio.
-      </p>
+      <p>Los motivos por los cuales se puede gestionar el cambio o la devolución de un producto son los siguientes:</p>
+      <ul>
+        <li>▪ Producto defectuoso antes de usarse: el producto recibido posee alguna falla o rotura.</li>
+        <li>▪ El producto recibido es diferente al que solicitó.</li>
+      </ul>
+      <p>En caso que un cliente reciba un producto en malas condiciones debe dar aviso dentro de las 48h de recibido el producto. Si el embalaje, caja o protector del producto llegase roto a causa del envío, no se debe abrir ni quitar ninguna faja de seguridad para hacer efectivo el cambio; Ya que al probar el producto o abrir su embalaje se considera que el cliente ha aceptado el producto como se lo entrego y no podrá hacer el cambio.</p>
       <h2>Opciones de cambios</h2>
       <p>-Para cambiar un producto SIN defectos (producto diferente al que se solicitó):
           Si el producto es nuevo y está sin defectos, el usuario tendrá hasta 10 días consecutivos, a partir de la fecha de recepción, para poder sustituirlo por otro siempre y cuando conserve las mismas condiciones en que fue recibido (en el embalaje original, sin indicios de uso, con la factura / ticket original, manual y todos los accesorios si correspondiera). Los gastos del flete serán gratuitos para el usuario, cuando se trate del primer cambio realizado. En caso de que sea necesario uno nuevamente, los gastos de flete serán a cargo del usuario.

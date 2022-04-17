@@ -1,11 +1,15 @@
-import Button from "components/Button/Button";
-import { useAuthContext } from "context/AuthContext";
-import styles from "./styles.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
+
+import { useAuthContext } from "context/AuthContext";
+
+import Button from "components/Button/Button";
 import Loader from "components/Loader/Loader";
 
+import styles from "./styles.module.css";
+
 export default function UserProfile() {
+  
   const { user, logOut, userData } = useAuthContext();
 
   return (
@@ -18,9 +22,9 @@ export default function UserProfile() {
         <h2>Correo electrónico </h2>
         <p>{user.email} <FontAwesomeIcon icon={faEdit}/></p>
         <h2>Teléfono</h2>
-        <p>{userData.tel || "-------------"} <FontAwesomeIcon icon={faEdit}/></p>
+        <p>{userData.tel || "------"} <FontAwesomeIcon icon={faEdit}/></p>
         <h2>Dirección</h2>
-        <p>{userData.adress || "-------------"}<FontAwesomeIcon icon={faEdit}/></p>
+        <p>{userData.adress || "------"}<FontAwesomeIcon icon={faEdit}/></p>
         <hr/>
         <div className={styles.UserProfile__actions}>
           <Button message="Cambiar contraseña"/>

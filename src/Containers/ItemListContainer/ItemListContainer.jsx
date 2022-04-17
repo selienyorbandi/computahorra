@@ -1,10 +1,12 @@
-import { useParams} from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useParams} from "react-router-dom";
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
+
 import FilterBar from "components/FilterBar/FilterBar";
 import ItemList from "components/ItemList/ItemList";
 import Loader from "components/Loader/Loader";
+
 import styles from "./styles.module.css";
-import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 
 function ItemListContainer({categoryFilter = false}){
   const [items, setItems] = useState([]);

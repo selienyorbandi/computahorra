@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../staticPages.module.css";
 
 function PoliticaDePrivacidad() {
@@ -25,12 +24,12 @@ Se informa que la Dirección Nacional de Protección de Datos Personales, Órgan
       <h2>Uso de la información</h2>
       <p>
       Para suministrar un excelente servicio y para que los Usuarios puedan realizar operaciones en forma ágil y segura, COMPUTAHORRA requiere cierta información de carácter personal, incluyendo dirección de e-mail. La recolección de información permite ofrecer a los usuarios servicios y funcionalidades que se adecúen mejor a sus necesidades y personalizar los servicios que brinda COMPUTAHORRA. La Información Personal que se recaba persigue las siguientes finalidades:
-        <ul>
-          <li>Desarrollar estudios internos sobre los intereses, comportamientos y demografía de los Usuarios para comprender mejor sus necesidades e intereses y ofrecer mejores servicios o proveerles información relacionada.  </li>
-          <li>Mejorar nuestras iniciativas comerciales y promocionales, así como nuestra oferta de contenidos y artículos, personalizar dichos contenidos, su presentación y servicios.</li>
-          <li>Enviar información o mensajes por e-mail sobre nuevos servicios, mostrar publicidad o promociones, banners de interés para nuestros usuarios, noticias sobre COMPUTAHORRA.</li>
-        </ul>
       </p>
+      <ul>
+        <li>Desarrollar estudios internos sobre los intereses, comportamientos y demografía de los Usuarios para comprender mejor sus necesidades e intereses y ofrecer mejores servicios o proveerles información relacionada.  </li>
+        <li>Mejorar nuestras iniciativas comerciales y promocionales, así como nuestra oferta de contenidos y artículos, personalizar dichos contenidos, su presentación y servicios.</li>
+        <li>Enviar información o mensajes por e-mail sobre nuevos servicios, mostrar publicidad o promociones, banners de interés para nuestros usuarios, noticias sobre COMPUTAHORRA.</li>
+      </ul>
       <h2>Confidencialidad de la información</h2>
       <p>Una vez registrado en el Sitio, COMPUTAHORRA no venderá, alquilará o compartirá la Información Personal. Sin perjuicio de ello, el Usuario consiente en forma expresa que COMPUTAHORRA transfiera total o parcialmente la Información Personal a cualquiera de las sociedades controladas, controlantes y/o vinculadas con COMPUTAHORRA, a cualquier título y en el momento, forma y condiciones que estime pertinentes. En caso de que, por órdenes judiciales, o por regulaciones legales, COMPUTAHORRA sea obligada a revelar información a las autoridades o terceras partes bajo ciertas circunstancias, COMPUTAHORRA no responderá por la información que sea revelada.
         La Dirección Nacional De Protección De Datos Personales, Órgano de Control de la Ley n° 25.326, tiene la atribución de atender las denuncias y reclamos que se interpongan con relación al incumplimiento de las normas sobre protección de datos personales, pudiendo el Usuario conocer más en profundidad sobre este tema en la siguiente dirección: www.jus.gov.ar/dnpdp

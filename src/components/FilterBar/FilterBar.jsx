@@ -1,8 +1,7 @@
+import { Link, useSearchParams } from "react-router-dom";
 import { faAnglesRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
-import { useSearchParams } from "react-router-dom";
-import React from "react";
+
 import styles from "./styles.module.css";
 
 function FilterBar({categories, brands}) {

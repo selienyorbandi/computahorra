@@ -1,8 +1,11 @@
+import { useEffect } from "react";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
+
+import { useAuthContext } from "context/AuthContext";
+
 import Login from "components/Login/Login";
 import UserProfile from "components/UserProfile/UserProfile";
-import { useAuthContext } from "context/AuthContext";
-import { doc, getDoc, getFirestore } from "firebase/firestore";
-import { useEffect } from "react";
+
 import styles from "./styles.module.css";
 
 function UserContainer() {
