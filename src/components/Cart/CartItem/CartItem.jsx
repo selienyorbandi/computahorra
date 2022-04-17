@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ItemCount from "components/ItemCount/ItemCount";
-import React from "react";
 import { formatPrice } from "utils/formatPrice";
 import styles from "./styles.module.css";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";

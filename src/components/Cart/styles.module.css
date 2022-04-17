@@ -1,6 +1,5 @@
 .Cart {
     margin: 5rem 1rem;
-    text-align: center;
 }
 
 .Cart__items,
@@ -22,57 +21,22 @@
     gap: 3rem;
 }
 
-.Cart__full__details {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    gap: 1rem;
-}
-
 .Cart h1 {
     margin-bottom: 1rem;
-}
-
-.Cart__full__details h2 {
-    font-size: 1.8rem;
-}
-
-.Cart__full__details h4 {
-    font-size: 1.3rem;
-    font-weight: 400;
-}
-
-.Cart__full__details p {
-    cursor: pointer;
-    width: 250px;
-    margin-top: 1rem;
-    text-align: center;
-}
-
-.Cart__full__details p:hover {
-    color: crimson;
 }
 
 @media screen and (min-width: 1100px) {
     .Cart {
         margin: 2rem;
-        text-align: left;
+        padding-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
     }
 
     .Cart__full {
         display: flex;
         flex-direction: row;
+        width: 300px;
     }
 
-    .Cart__full__details {
-        width: 300px;
-        height: 360px;
-        display: flex;
-        flex-direction: column;
-        padding: 1.5rem;
-        gap: 1rem;
-        margin-left: 1rem;
-    }
 }

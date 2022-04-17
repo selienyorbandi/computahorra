@@ -6,6 +6,9 @@
     flex-direction: column;
     align-items: center;
     border-bottom: solid 1px rgba(128, 128, 128, 0.356);
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 750px;
 }
 
 .CartItem__bRow {
@@ -56,6 +59,7 @@
         align-items: center;
         text-align: left;
         gap: 2rem;
+        width: 750px;
     }
 
     .CartItem__title,
@@ -65,7 +69,7 @@
     }
 
     .CartItem__title {
-        width: 350px;
+        width: 250px;
     }
 
     .CartItem__price {

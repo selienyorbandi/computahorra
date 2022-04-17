@@ -8,13 +8,29 @@ import SearchBar from "./SearchBar/SearchBar";
 import CartWidget from "./CartWidget/CartWidget";
 import { NavLink } from "react-router-dom";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { useRef } from "react";
+import UserWidget from "./UserWidget/UserWidget";
 
 function NavBar(){
   
   const [openMenu, setOpenMenu] = useState(false);
   const [openCategories, setOpenCategories] = useState(false);
+  const categoriesMenuRef = useRef();
+  const navMenuRef = useRef();
   const [categories, setCategories] = useState([]);
-    
+
+  const handleMenuClick = () => {
+    if (openMenu){
+      setOpenMenu(false);
+      setOpenCategories(false);
+    } else {
+      setOpenMenu(true);
+    }
+  };
+  const handleCategoriesClick = () => {
+    openCategories ? setOpenCategories(false) : setOpenCategories(true);
+  };
+
   useEffect(() => {
     const db = getFirestore();
     const queryCollectionCategories = collection(db, "categories");
@@ -24,8 +40,35 @@ function NavBar(){
       .catch(error => console.log(error));
   }, []);
 
+  useEffect(() => {
+    const checkIfClickedOutside = e => {
+      if (openMenu && navMenuRef.current && !navMenuRef.current.contains(e.target)) {
+        setOpenMenu(false);
+      }
+    };
+
+    document.addEventListener("mousedown", checkIfClickedOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", checkIfClickedOutside);
+    };
+  }, [openMenu]);
+
+  useEffect(() => {
+    const checkIfClickedOutside = e => {
+      if (openCategories && categoriesMenuRef.current && !categoriesMenuRef.current.contains(e.target)) {
+        setOpenCategories(false);
+      }
+    };
+    document.addEventListener("mousedown", checkIfClickedOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", checkIfClickedOutside);
+    };
+  }, [openCategories]);
+
   return(
-    <nav className={styles.Navigation}>
+    <nav className={styles.Navigation} ref={navMenuRef}>
       <div className={styles.Navigation__NavBarCnt}>
         <div className={styles.Navigation__NavBar}>
           <div className={styles.NavBar__btnMenu} onClick={handleMenuClick}>
@@ -41,7 +84,7 @@ function NavBar(){
           <SearchBar/>
           <div className={styles.NavBar__icons}>
             <span><FontAwesomeIcon icon={faMagnifyingGlass} /></span>
-            <span><FontAwesomeIcon icon={faUser} /></span>
+            <UserWidget/>
             <CartWidget/>
           </div>
         </div>
@@ -50,9 +93,8 @@ function NavBar(){
         <div className={styles.NavBar__list__content}>
           <NavLink to="/">Inicio</NavLink>
           <li onClick={handleCategoriesClick}>Categorías&nbsp;<FontAwesomeIcon icon={faCaretDown} className={styles.NavBar__categories}/>
-            {openCategories ? <CategoriesNavBar categories={categories}/> : null}
+            {openCategories ? <div ref={categoriesMenuRef}><CategoriesNavBar categories={categories}/></div> : <></>}
           </li>
-          <li>Armá tu pc</li>
           <NavLink to="/ayuda">Centro de ayuda</NavLink>
           <NavLink to="/nosotros">Nosotros</NavLink>
           <li>Contacto</li>
@@ -60,13 +102,12 @@ function NavBar(){
       </ul>
       {openMenu ? 
         <ul className={styles.NavBar__menu}>
-          <li>Mi perfil <FontAwesomeIcon icon={faUser}/></li>
+          <NavLink to="/user">Mi perfil <FontAwesomeIcon icon={faUser}/></NavLink>
           <li>Mis compras <FontAwesomeIcon icon={faBagShopping}/></li>
           <li onClick={handleCategoriesClick}>Categorías <FontAwesomeIcon icon={faCaretDown}/>
-            {openCategories ? <CategoriesNavBar categories={categories}/> : null}
+            {openCategories ? <div ref={categoriesMenuRef}><CategoriesNavBar  categories={categories}/></div>: <></>}
           </li>
           <NavLink to="/">Inicio</NavLink>
-          <li>Armá tu pc</li>
           <NavLink to="/ayuda">Centro de ayuda</NavLink>
           <NavLink to="/nosotros">Nosotros</NavLink>
           <li>Contacto</li>
@@ -74,18 +115,6 @@ function NavBar(){
         : ""}
     </nav>
   );
-        
-  function handleMenuClick(){
-    if (openMenu){
-      setOpenMenu(false);
-      setOpenCategories(false);
-    } else {
-      setOpenMenu(true);
-    }
-  }
-  function handleCategoriesClick(){
-    openCategories ? setOpenCategories(false) : setOpenCategories(true);
-  }
 
 }
 

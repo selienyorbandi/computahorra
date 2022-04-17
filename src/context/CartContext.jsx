@@ -21,7 +21,6 @@ export function CartContextProvider({children}) {
     clearCart();
     const itemToAdd = Object.assign(item, {quantity: 1});
     setCartList([itemToAdd]);
-    //Breve timeout y llevará al checkout de pago directamente (cuando esté hecho)
   };
 
   const removeItem = itemId => {
@@ -66,7 +65,7 @@ export function CartContextProvider({children}) {
       changeQuantity,
       totalPrice,
       totalQuantity,
-      buyNow
+      buyNow      
     }}>
       {children}
     </CartContext.Provider>
