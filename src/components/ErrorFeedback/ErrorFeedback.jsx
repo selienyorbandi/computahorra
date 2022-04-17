@@ -7,7 +7,9 @@ export default function ErrorFeedback({code}) {
     "auth/invalid-phone-number": "Ingrese un teléfono de la forma +54 9 XXX XXX XXXX",
     "auth/wrong-password": "Contraseña incorrecta",
     "auth/user-not-found": "El usuario ingresado no existe",
-    "auth/account-exists-with-different-credential": "El email de esa cuenta ya se encuentra en uso"
+    "auth/account-exists-with-different-credential": "El email de esa cuenta ya se encuentra en uso",
+    "register/password-confirm-error": "La contraseña no coincide con su confirmación",
+    "register/empty-fields": "Los campos con * son obligatorios"
   };
   return (
     <>
