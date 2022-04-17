@@ -52,3 +52,7 @@
     color: #fff;
     border: none;
 }
+.UserProfile hr {
+    border: solid 1px rgba(108, 108, 108, 0.169);
+    width: 70%;
+}

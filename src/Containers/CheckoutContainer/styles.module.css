@@ -1,16 +1,30 @@
 .Checkout {
-    margin: 5rem 1rem;
+    margin: 5rem 1rem auto;
     text-align: center;
 }
 
 .Checkout h1 {
     margin-bottom: 1rem;
 }
-
+.Checkout h5 {
+    font-size: 1.2rem;
+    padding-bottom: .5rem;
+    color: #67a27d;
+}
 .Checkout__UserData {
     display: flex;
     justify-content: center;
     gap: 1rem;
+}
+
+.Checkout__logInRequest {
+    text-align: center;
+    padding: 1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+.Checkout__orderId {
+    padding: 1.5rem 0;
 }
 
 @media screen and (min-width: 1100px) {
@@ -24,7 +38,10 @@
     .Checkout__content {
         display: flex;
         flex-direction: row;
+        align-items: center;
+        height: 600px;
     }
+
     .Checkout__content__summary {
         width: 800px;
         background: red;

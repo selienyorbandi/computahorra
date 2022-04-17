@@ -7,6 +7,7 @@ import Button from "components/Button/Button";
 import { useState } from "react";
 import Login from "components/Login/Login";
 import { useAuthContext } from "context/AuthContext";
+import { Link } from "react-router-dom";
 
 function CheckoutContainer() {
   const { cartList, totalPrice } = useCartContext();
@@ -31,19 +32,25 @@ function CheckoutContainer() {
   return (
     <div className={styles.Checkout}>
       {
-        cartList.length > 0? 
+        cartList.length > 0 ? 
           <div>
             <div>
               <div className={styles.Checkout__content}>
                 <div className={styles.Checkout__UserData}>
                   {user ? <></> : <Login redirect={false}/>}
                 </div> 
-                <Summary checkout children={<Button message="Realizar compra" onClick={sendOrder} primary disabl={user ? false : true}/>}/>
-              </div>
-              <div className={styles.Checkout}>
-                {
-                  id ? <h4>Gracias por tu compra. Pedido: {id}</h4> : <></>
-                }
+                <Summary checkout children={
+                  <>
+                    {!user && <><p className={styles.Checkout__logInRequest}>Inicie sesión para continuar</p></>}
+                    {!id ? <Button message="Finalizar compra" onClick={sendOrder} primary disabl={user ? false : true}/> :
+                      <>
+                        <Link to="/"><Button message={"Volver a inicio"}/></Link>
+                        <p className={styles.Checkout__orderId}>Pedido: {id}</p>
+                        <h5>Gracias por tu compra</h5>
+                        <img src="https://i.postimg.cc/Kjyf7McJ/icons8-pagado.gif" alt="purchase" width="50px"/>
+                      </>}
+                  </>}
+                />
               </div>
             </div>
           </div>

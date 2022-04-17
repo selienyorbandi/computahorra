@@ -20,7 +20,7 @@ function Summary({cart = false, checkout = false, order = {}, children}) {
       {
         cart ? 
           <>
-            <Link to="/checkout"><Button message="Finalizar compra" primary/></Link>
+            <Link to="/checkout"><Button message="Comprar" primary/></Link>
             <Link to="/"><Button message="Agregar productos"/></Link>
           </>
           : <></>

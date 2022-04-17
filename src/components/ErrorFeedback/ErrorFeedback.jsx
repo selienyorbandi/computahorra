@@ -8,8 +8,9 @@ export default function ErrorFeedback({code}) {
     "auth/wrong-password": "Contraseña incorrecta",
     "auth/user-not-found": "El usuario ingresado no existe",
     "auth/account-exists-with-different-credential": "El email de esa cuenta ya se encuentra en uso",
-    "register/password-confirm-error": "La contraseña no coincide con su confirmación",
-    "register/empty-fields": "Los campos con * son obligatorios"
+    "register/password-confirm-error": "Las contraseñas no coinciden",
+    "register/empty-fields": "Los campos marcados con * son obligatorios",
+    "auth/invalid-email": "El correo electrónico ingresado no es válido"
   };
   return (
     <>

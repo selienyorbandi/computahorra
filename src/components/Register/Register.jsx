@@ -114,7 +114,6 @@ function Register() {
         {regError ? <ErrorFeedback code={regError} /> : <></>}
         {loading ? <Loader/> : <></>}
       </form>
-      
     </div>
   );
 }
