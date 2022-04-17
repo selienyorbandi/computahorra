@@ -22,12 +22,11 @@ function Login({redirect=true}) {
     setUser({...user, [name]: value});
   };
 
-  const handleSubmit = async (e,redirect) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await logIn(user.email, user.password)
         .then( userCredentials => {
-          console.log("Logueado con éxito!!");
           redirect && navigate("/user");
         });
     } catch (error) {
@@ -44,7 +43,7 @@ function Login({redirect=true}) {
   };
 
   const handleFacebookLogin = async () => {
-    await logInFacebook(); //todo corregir
+    await logInFacebook();
   };
 
   return (

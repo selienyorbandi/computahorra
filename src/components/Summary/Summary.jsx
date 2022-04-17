@@ -16,7 +16,6 @@ function Summary({cart = false, checkout = false, order = {}, children}) {
       <h2>{cart ? "Resumen" : "Resumen de compra"}</h2>
       {checkout ? <SummItem/> : <></>}
       <h4><strong>Subtotal: </strong> <span>{formatPrice(totalPrice())}</span></h4>
-      <h5>Envío: <span>gratis</span></h5>
       <h4><strong>Total: </strong> <span>{formatPrice(totalPrice())}</span></h4>
       {
         cart ? 

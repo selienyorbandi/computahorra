@@ -9,7 +9,8 @@ export const useAuthContext = () => useContext(AuthContext);
 export function AuthContextProvider({children}) {
   
   const [user, setUser] = useState(null);
-
+  const [userData, setUserData] = useState(null);
+ 
   const signUp = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
@@ -41,6 +42,8 @@ export function AuthContextProvider({children}) {
   return (
     <AuthContext.Provider value={{
       user,
+      userData,
+      setUserData,
       signUp,
       logIn,
       logOut,

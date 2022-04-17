@@ -2,14 +2,16 @@ import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "components/Button/Button";
 import ErrorFeedback from "components/ErrorFeedback/ErrorFeedback";
+import Loader from "components/Loader/Loader";
 import { useAuthContext } from "context/AuthContext";
+import { doc, getFirestore, setDoc } from "firebase/firestore";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
 
 function Register() {
-  
-  const { signUp, updateProfile } = useAuthContext();
+  const [loading, setLoading] = useState(false);
+  const { signUp } = useAuthContext();
   const [user, setUser] = useState({
     name: "",
     surname: "",
@@ -23,11 +25,24 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    let userData;
     try {
       await signUp(user.email, user.password)
-        .then( userCredentials => {
-          updateProfile(user.name, user.tel)
-            .then( () => navigate("/user"));
+        .then(userCredentials => {
+          userData = {
+            id: userCredentials.user.uid,
+            name: user.name,
+            surname: user.surname,
+            email: user.email,
+            tel: user.tel
+          };
+          const db = getFirestore();
+          setDoc(doc(db, "users", userData.id), userData)
+            .then(()=> {
+              navigate("/user");
+            })
+            .catch(err => console.log(err));
         });
     } catch (error) {
       setRegError(error.code);
@@ -82,6 +97,7 @@ function Register() {
           <Link to="/login"><Button message={"Ya tengo cuenta"} size="sm"/></Link>
         </div>
         {regError ? <ErrorFeedback code={regError} /> : <></>}
+        {loading ? <Loader/> : <></>}
       </form>
       
     </div>
