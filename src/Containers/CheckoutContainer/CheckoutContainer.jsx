@@ -46,7 +46,7 @@ function CheckoutContainer() {
                   <>
                     {!user && <><p className={styles.Checkout__logInRequest}>Inicie sesión para continuar</p></>}
                     {!id ? <>
-                      <p className={styles.Checkout__userIdentifier}>Comprar como {user.email}</p>
+                      {user && <p className={styles.Checkout__userIdentifier}>Comprar como {user.email}</p>}
                       <Button message="Finalizar compra" onClick={sendOrder} primary disabl={user ? false : true}/>
                     </> :
                       <>
