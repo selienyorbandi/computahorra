@@ -26,6 +26,9 @@
 .Checkout__orderId {
     padding: 1.5rem 0;
 }
+.Checkout__userIdentifier {
+    padding: 1rem 0;
+}
 
 @media screen and (min-width: 1100px) {
     .Checkout {

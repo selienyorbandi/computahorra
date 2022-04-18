@@ -45,7 +45,10 @@ function CheckoutContainer() {
                 <Summary checkout children={
                   <>
                     {!user && <><p className={styles.Checkout__logInRequest}>Inicie sesión para continuar</p></>}
-                    {!id ? <Button message="Finalizar compra" onClick={sendOrder} primary disabl={user ? false : true}/> :
+                    {!id ? <>
+                      <p className={styles.Checkout__userIdentifier}>Comprar como {user.email}</p>
+                      <Button message="Finalizar compra" onClick={sendOrder} primary disabl={user ? false : true}/>
+                    </> :
                       <>
                         <Link to="/"><Button message={"Volver a inicio"}/></Link>
                         <p className={styles.Checkout__orderId}>Pedido: {id}</p>
