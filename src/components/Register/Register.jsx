@@ -1,18 +1,26 @@
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { doc, getFirestore, setDoc } from "firebase/firestore";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { useAuthContext } from "context/AuthContext";
+
 import Button from "components/Button/Button";
 import ErrorFeedback from "components/ErrorFeedback/ErrorFeedback";
 import Loader from "components/Loader/Loader";
-import { useAuthContext } from "context/AuthContext";
-import { doc, getFirestore, setDoc } from "firebase/firestore";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+
 import styles from "./styles.module.css";
 
 function Register() {
+
+  const navigate = useNavigate();
+
+  const { signUp } = useAuthContext();
+
   const [loading, setLoading] = useState(false);
   const [isFullfilledForm, setIsFullfiledForm] = useState(false);
-  const { signUp } = useAuthContext();
+  const [regError, setRegError] = useState(null);
   const [user, setUser] = useState({
     name: "",
     surname: "",
@@ -21,8 +29,6 @@ function Register() {
     password: "",
     confirmPassword: ""
   });
-  const navigate = useNavigate();
-  const [regError, setRegError] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -1,22 +1,26 @@
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {  faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
-import Button from "components/Button/Button";
-import styles from "./styles.module.css";
+
 import { useAuthContext } from "context/AuthContext";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+
+import Button from "components/Button/Button";
 import ErrorFeedback from "components/ErrorFeedback/ErrorFeedback";
 
-function Login({redirect=true}) {
+import styles from "./styles.module.css";
 
+function Login({redirect=true}) {
+  
+  const navigate = useNavigate();
+  
   const { logIn, logInGoogle, logInFacebook } = useAuthContext();
+  const [logError, setLogError] = useState(null);
   const [user, setUser] = useState({
     email: "",
     password: ""
   });
-  const [logError, setLogError] = useState(null);
-  const navigate = useNavigate();
 
   const handleChange = ({target: {name, value}}) => {
     setUser({...user, [name]: value});
@@ -31,7 +35,7 @@ function Login({redirect=true}) {
         });
     } catch (error) {
       setLogError(error.code);
-      console.error("😵.... hubo un error maquinola, intentá de nuevo 😅 --> \n" + error.message + "\n Tipo de error: "+ logError);
+      /* console.error("😵.... hubo un error maquinola, intentá de nuevo 😅 --> \n" + error.message + "\n Tipo de error: "+ logError); */
       setTimeout(()=> {
         setLogError(null);
       }, 8000);

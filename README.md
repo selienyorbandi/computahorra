@@ -1,6 +1,6 @@
 # Computahorra - Ecommerce en React  
 
-Computahorra es una tienda digital de productos de informática. Es un sitio web responsivo -mobile first- que pretende crecer hasta incluir todas las características deseadas de un e-commerce al mismo tiempo que cumpla con los requisitos pedidos por un curso de CoderHouse que estoy realizando.
+Computahorra es una tienda digital de productos de informática. Es un sitio web responsivo -mobile first- que pretende ofrecer características típicas de un e-commerce.
 
 ![Logo de Computahorra](https://raw.githubusercontent.com/selienyorbandi/computahorra/main/src/assets/img/brandLogo.png)
 
@@ -12,15 +12,21 @@ Computahorra es una tienda digital de productos de informática. Es un sitio web
 
 ## Dependencias
 
+En detalle en [package.json](https://github.com/selienyorbandi/computahorra/blob/main/package.json)
+
 ### De producción
 
-- React Router v6.2.2, para realizar la navegación de SPA
-- React FontAwesome v0.1.17, por la facilidad para insertar íconos y modificar su apariencia al comportarse como una tipografía.
-- Firebase v9.6.10, como solución sencilla a la necesidad de una base de datos
+Además del uso de React, hago uso de las siguientes dependencias externas:
+
+| Nombre         | Versión  | Utilidad            |
+|-------------------|-------------|---------------|
+| React Router  | 6.2.2   | Para realizar la navegación de SPA|
+| Firebase | 9.6.10 | Es una solución sencilla a la necesidad de una base de datos             |
+| React FontAwesome        | 0.1.17       | Por la facilidad para insertar íconos y modificar su apariencia al comportarse como una tipografía.|
 
 ### De desarrollo
 
-- Eslint v8.10.0, para uniformidad en el código.
+- Eslint v8.10.0, para uniformidad en el código. [Reglas](https://github.com/selienyorbandi/computahorra/blob/main/.eslintrc.json)
 
 ## Generalidades
 

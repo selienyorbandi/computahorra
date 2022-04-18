@@ -1,15 +1,16 @@
-import { useState, useEffect } from "react";
-import logo from "assets/img/brandLogo.png";
-import styles from "./styles.module.css";
+import { useState, useEffect, useRef } from "react";
+import { NavLink } from "react-router-dom";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faBagShopping, faCaretDown, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+
 import CategoriesNavBar from "./CategoriesNavBar/CategoriesNavBar";
 import SearchBar from "./SearchBar/SearchBar";
 import CartWidget from "./CartWidget/CartWidget";
-import { NavLink } from "react-router-dom";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
-import { useRef } from "react";
 import UserWidget from "./UserWidget/UserWidget";
+
+import styles from "./styles.module.css";
+import logo from "assets/img/brandLogo.png";
 
 function NavBar(){
   

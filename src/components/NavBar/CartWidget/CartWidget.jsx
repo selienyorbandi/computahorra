@@ -1,8 +1,10 @@
-import styles from "./styles.module.css";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+
 import { useCartContext } from "context/CartContext";
+
+import styles from "./styles.module.css";
 
 function CartWidget(){
   const { totalQuantity } = useCartContext();

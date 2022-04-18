@@ -1,6 +1,7 @@
-import { useCartContext } from "context/CartContext";
-import React from "react";
 import { formatPrice } from "utils/formatPrice";
+
+import { useCartContext } from "context/CartContext";
+
 import styles from "./styles.module.css";
 
 function SummItem() {

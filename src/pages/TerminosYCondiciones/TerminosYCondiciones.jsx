@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../staticPages.module.css";
 
 function TerminosYCondiciones() {

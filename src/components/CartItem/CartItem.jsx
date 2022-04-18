@@ -1,10 +1,13 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import ItemCount from "components/ItemCount/ItemCount";
-import { formatPrice } from "utils/formatPrice";
-import styles from "./styles.module.css";
-import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
-import { useCartContext } from "context/CartContext";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { formatPrice } from "utils/formatPrice";
+
+import { useCartContext } from "context/CartContext";
+
+import ItemCount from "components/ItemCount/ItemCount";
+
+import styles from "./styles.module.css";
 
 function CartItem({item}) {
   const { title, thumbnail, price, quantity, stock, id }= item;

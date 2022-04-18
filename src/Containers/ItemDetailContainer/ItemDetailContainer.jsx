@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
+
 import ItemDetail from "components/ItemDetail/ItemDetail";
 import Loader from "components/Loader/Loader";
-import { useParams } from "react-router-dom";
+
 import styles from "./styles.module.css";
-import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 function ItemDetailContainer() {
   const [item, setItem] = useState({});
