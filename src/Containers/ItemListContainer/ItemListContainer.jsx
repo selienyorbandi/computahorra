@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { useParams} from "react-router-dom";
+import { Link, useParams} from "react-router-dom";
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 
 import FilterBar from "components/FilterBar/FilterBar";
 import ItemList from "components/ItemList/ItemList";
 import Loader from "components/Loader/Loader";
+import Button from "components/Button/Button";
 
 import styles from "./styles.module.css";
 
@@ -16,7 +17,7 @@ function ItemListContainer({categoryFilter = false}){
   const [brands, setBrands] = useState([]);
   
   useEffect(() => {
-    if(categoryFilter) {
+    if(categoryFilter && categoryId ) {
       const db = getFirestore();
       const queryCollectionCategories = collection(db, "categories");
       const queryCollectionBrands = collection(db, "brands");
@@ -29,7 +30,7 @@ function ItemListContainer({categoryFilter = false}){
         .then(result => setBrands(result))
         .catch(error => console.log(error));
     }
-  }, [categoryFilter]);
+  }, [categoryFilter, categoryId]);
 
   useEffect(() => {
     const db = getFirestore();
@@ -47,13 +48,23 @@ function ItemListContainer({categoryFilter = false}){
     <section>
       { loading ? <Loader/> : 
         <> 
-          <h1 className={styles.MainTitle}>{ categoryFilter ? categories ? categories.find(catg => categoryId === catg.id).name : <></> : "Productos destacados"}</h1>
-          <div className={styles.MainContainer}>
-            { categoryFilter ? categories ? <FilterBar categories={categories} brands={brands}/> : <></> : <></>} 
-            <div className={styles.ItemListContainer}>
-              <ItemList items={items}/>
-            </div>
-          </div>
+          {
+            items.length ? 
+              <>
+                <h1 className={styles.MainTitle}>{ categoryFilter ? categories ? categories.find(catg => categoryId === catg.id).name : <></> : "Productos destacados"}</h1>
+                <div className={styles.MainContainer}>
+                  { categoryFilter ? categories ? <FilterBar categories={categories} brands={brands}/> : <></> : <></>} 
+                  <div className={styles.ItemListContainer}>
+                    <ItemList items={items}/>
+                  </div>
+                </div>
+              </>
+              :
+              <div className={styles.ItemListContainer__doesntExist}>
+                <h1>Lo siento, no tenemos esa categoría</h1>
+                <Link to="/"><Button message="Volver al inicio"/></Link>
+              </div>
+          }
         </>
       }
     </section>

@@ -20,6 +20,15 @@
     font-weight: 600;
 }
 
+.ItemListContainer__doesntExist {
+    margin: 7rem 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
 @media screen and (min-width: 1100px) {
     .ItemListContainer {
         padding-bottom: 2rem;
