@@ -4,32 +4,92 @@
     cursor: pointer;
     height: 40px;
 }
+
 .Button__sm {
     width: 150px;
 }
+
 .Button__md {
     width: 250px;
 }
 
 .Button__primary {
-    background: var(--primary-color);
+    background: var(--btn-color);
     color: #fff;
     border: none;
 }
 
 .Button__secondary {
     background: var(--light-color);
-    border: solid 1px var(--primary-color);
-    color: var(--primary-color);
+    border: solid 1px var(--btn-color);
+    color: var(--btn-color);
     font-weight: 600;
 }
 
-.Button:active {
+.Button__primary__red {
+    background: crimson;
+}
+
+.Button__secondary__red {
+    border-color: crimson;
+    color: crimson;
+}
+
+.Button__primary__green {
+    background: green;
+}
+
+.Button__secondary__green {
+    border-color: green;
+    color: green;
+}
+
+.Button__primary__lightblue {
+    background: rgb(53, 160, 202);
+}
+
+.Button__secondary__lightblue {
+    border-color: rgb(53, 160, 202);
+    color: rgb(53, 160, 202);
+}
+
+.Button__primary:active {
     background: var(--secondary-color);
 }
+
+.Button__primary__red:active {
+    background: rgba(220, 20, 60, 0.721);
+}
+
+.Button__primary__green:active {
+    background: rgb(21, 152, 21);
+}
+
+.Button__primary__lightblue:active {
+    background: skyblue;
+}
+
 .Button__secondary:active {
+    background: var(--secondary-color);
     color: #fff;
 }
+
+.Button__secondary__red:active {
+    background: crimson;
+}
+
+.Button__secondary__green:active {
+    background: green;
+}
+
+.Button__secondary__lightblue:active {
+    background: rgb(53, 160, 202);
+}
+
+.Button:hover {
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.08);
+}
+
 .Button:disabled {
     background: gray;
 }

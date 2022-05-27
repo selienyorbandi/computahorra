@@ -8,6 +8,7 @@
   --lighter-color: #fbfbfb;
   --dark-color: #2b272e;
   --darkest-color: #171717;
+  --btn-color: var(--primary-color);
 }
 
 * {
@@ -26,6 +27,6 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto auto auto;
- justify-tracks: center;
+  justify-tracks: center;
   grid-column: auto;
 }

@@ -1,9 +1,11 @@
 .FilterBar {
     display: none;
 }
+
 .FilterBar li {
     cursor: pointer;
 }
+
 .FilterBar li:hover,
 .FilterBar a:hover {
     color: var(--secondary-color);

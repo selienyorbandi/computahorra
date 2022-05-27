@@ -17,16 +17,21 @@
     justify-content: flex-start;
     font-size: 1.1rem;
 }
+
 .Footer__content__hr {
     border: 1px solid var(--dark-color);
     margin-bottom: 1rem;
 }
-.Footer__content__row li, .Footer__content__row a {
+
+.Footer__content__row li,
+.Footer__content__row a {
     cursor: pointer;
     text-decoration: none;
     color: var(--light-color);
 }
-.Footer__content__row li:hover, .Footer__content__row a:hover {
+
+.Footer__content__row li:hover,
+.Footer__content__row a:hover {
     color: var(--secondary-color);
 }
 
@@ -34,6 +39,7 @@
     .Footer__content__row {
         justify-content: center;
     }
+
     .Footer__content__hr {
         display: none;
     }

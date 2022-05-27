@@ -2,7 +2,12 @@ import { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faBagShopping, faCaretDown, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUser,
+  faBagShopping,
+  faCaretDown,
+  faMagnifyingGlass,
+} from "@fortawesome/free-solid-svg-icons";
 
 import CategoriesNavBar from "./CategoriesNavBar/CategoriesNavBar";
 import SearchBar from "./SearchBar/SearchBar";
@@ -12,8 +17,7 @@ import UserWidget from "./UserWidget/UserWidget";
 import styles from "./styles.module.css";
 import logo from "assets/img/brandLogo.png";
 
-function NavBar(){
-  
+function NavBar() {
   const [openMenu, setOpenMenu] = useState(false);
   const [openCategories, setOpenCategories] = useState(false);
   const categoriesMenuRef = useRef();
@@ -21,7 +25,7 @@ function NavBar(){
   const [categories, setCategories] = useState([]);
 
   const handleMenuClick = () => {
-    if (openMenu){
+    if (openMenu) {
       setOpenMenu(false);
       setOpenCategories(false);
     } else {
@@ -36,14 +40,20 @@ function NavBar(){
     const db = getFirestore();
     const queryCollectionCategories = collection(db, "categories");
     getDocs(queryCollectionCategories)
-      .then(response => response.docs.map(category => ({id: category, ...category.data()})))
-      .then(result => setCategories(result))
-      .catch(error => console.log(error));
+      .then((response) =>
+        response.docs.map((category) => ({ id: category, ...category.data() }))
+      )
+      .then((result) => setCategories(result))
+      .catch((error) => console.log(error));
   }, []);
 
   useEffect(() => {
-    const checkIfClickedOutside = e => {
-      if (openMenu && navMenuRef.current && !navMenuRef.current.contains(e.target)) {
+    const checkIfClickedOutside = (e) => {
+      if (
+        openMenu &&
+        navMenuRef.current &&
+        !navMenuRef.current.contains(e.target)
+      ) {
         setOpenMenu(false);
       }
     };
@@ -56,8 +66,12 @@ function NavBar(){
   }, [openMenu]);
 
   useEffect(() => {
-    const checkIfClickedOutside = e => {
-      if (openCategories && categoriesMenuRef.current && !categoriesMenuRef.current.contains(e.target)) {
+    const checkIfClickedOutside = (e) => {
+      if (
+        openCategories &&
+        categoriesMenuRef.current &&
+        !categoriesMenuRef.current.contains(e.target)
+      ) {
         setOpenCategories(false);
       }
     };
@@ -68,7 +82,7 @@ function NavBar(){
     };
   }, [openCategories]);
 
-  return(
+  return (
     <nav className={styles.Navigation} ref={navMenuRef}>
       <div className={styles.Navigation__NavBarCnt}>
         <div className={styles.Navigation__NavBar}>
@@ -77,46 +91,71 @@ function NavBar(){
             <span></span>
             <span></span>
           </div>
-          <NavLink to={"/"}> 
+          <NavLink to={"/"}>
             <div className={styles.NavBar__brandLogo}>
-              <img src={logo} alt="Computahorra logo" width="132" height="44"/>
+              <img src={logo} alt="Computahorra logo" width="132" height="44" />
             </div>
           </NavLink>
-          <SearchBar/>
+          <SearchBar />
           <div className={styles.NavBar__icons}>
-            <span><FontAwesomeIcon icon={faMagnifyingGlass} /></span>
-            <UserWidget/>
-            <CartWidget/>
+            <span>
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
+            </span>
+            <UserWidget />
+            <CartWidget />
           </div>
         </div>
       </div>
       <ul className={styles.NavBar__list}>
         <div className={styles.NavBar__list__content}>
           <NavLink to="/">Inicio</NavLink>
-          <li onClick={handleCategoriesClick}>Categorías&nbsp;<FontAwesomeIcon icon={faCaretDown} className={styles.NavBar__categories}/>
-            {openCategories ? <div ref={categoriesMenuRef}><CategoriesNavBar categories={categories}/></div> : <></>}
+          <li onClick={handleCategoriesClick}>
+            Categorías&nbsp;
+            <FontAwesomeIcon
+              icon={faCaretDown}
+              className={styles.NavBar__categories}
+            />
+            {openCategories ? (
+              <div ref={categoriesMenuRef}>
+                <CategoriesNavBar categories={categories} />
+              </div>
+            ) : (
+              <></>
+            )}
           </li>
           <NavLink to="/ayuda">Centro de ayuda</NavLink>
           <NavLink to="/nosotros">Nosotros</NavLink>
           <li>Contacto</li>
         </div>
       </ul>
-      {openMenu ? 
+      {openMenu ? (
         <ul className={styles.NavBar__menu}>
-          <NavLink to="/user">Mi perfil <FontAwesomeIcon icon={faUser}/></NavLink>
-          <li>Mis compras <FontAwesomeIcon icon={faBagShopping}/></li>
-          <li onClick={handleCategoriesClick}>Categorías <FontAwesomeIcon icon={faCaretDown}/>
-            {openCategories ? <div ref={categoriesMenuRef}><CategoriesNavBar  categories={categories}/></div>: <></>}
+          <NavLink to="/user">
+            Mi perfil <FontAwesomeIcon icon={faUser} />
+          </NavLink>
+          <li>
+            Mis compras <FontAwesomeIcon icon={faBagShopping} />
+          </li>
+          <li onClick={handleCategoriesClick}>
+            Categorías <FontAwesomeIcon icon={faCaretDown} />
+            {openCategories ? (
+              <div ref={categoriesMenuRef}>
+                <CategoriesNavBar categories={categories} />
+              </div>
+            ) : (
+              <></>
+            )}
           </li>
           <NavLink to="/">Inicio</NavLink>
           <NavLink to="/ayuda">Centro de ayuda</NavLink>
           <NavLink to="/nosotros">Nosotros</NavLink>
           <li>Contacto</li>
         </ul>
-        : ""}
+      ) : (
+        ""
+      )}
     </nav>
   );
-
 }
 
 export default NavBar;

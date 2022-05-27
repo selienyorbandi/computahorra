@@ -21,31 +21,49 @@ import Register from "components/Register/Register";
 import "App.css";
 
 function App() {
-  
   return (
     <div className="Wrapper">
       <AuthContextProvider>
         <CartContextProvider>
           <BrowserRouter>
-            <ScrollToTop/>
-            <Header/>
+            <ScrollToTop />
+            <Header />
             <main>
               <Routes>
-                <Route path="/" element={<ItemListContainer categoryFilter={false}/>}/>
-                <Route path="/item/:id" element={<ItemDetailContainer />}/>
-                <Route path="/category/:id" element={<ItemListContainer categoryFilter={true}/>}/>
-                <Route path="/cart" element={<CartContainer/>}/>
-                <Route path="/checkout" element={<CheckoutContainer/>}/>
-                <Route path="/user/*" element={<UserContainer/>}/>
-                <Route path="/login" element={<Login/>}/>
-                <Route path="/register" element={<Register />}/>
-                <Route path="/politica-de-privacidad/*" element={<PoliticaDePrivacidad/>}/>
-                <Route path="/terminos-y-condiciones/*" element={<TerminosYCondiciones/>}/>
-                <Route path="/garantia-y-devoluciones/*" element={<GarantiaYDevoluciones/>}/>
-                <Route path="*" element={<Navigate replace to="/"/>}/>
+                <Route
+                  path="/"
+                  element={<ItemListContainer trending={true} />}
+                />
+                <Route path="/item/:id" element={<ItemDetailContainer />} />
+                <Route
+                  path="/category/:id"
+                  element={<ItemListContainer categoryFilter={true} />}
+                />
+                <Route
+                  path="/search/:keywords"
+                  element={<ItemListContainer search={true} />}
+                />
+                <Route path="/cart" element={<CartContainer />} />
+                <Route path="/checkout" element={<CheckoutContainer />} />
+                <Route path="/user/*" element={<UserContainer />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route
+                  path="/politica-de-privacidad/*"
+                  element={<PoliticaDePrivacidad />}
+                />
+                <Route
+                  path="/terminos-y-condiciones/*"
+                  element={<TerminosYCondiciones />}
+                />
+                <Route
+                  path="/garantia-y-devoluciones/*"
+                  element={<GarantiaYDevoluciones />}
+                />
+                <Route path="*" element={<Navigate replace to="/" />} />
               </Routes>
             </main>
-            <Footer/>
+            <Footer />
           </BrowserRouter>
         </CartContextProvider>
       </AuthContextProvider>

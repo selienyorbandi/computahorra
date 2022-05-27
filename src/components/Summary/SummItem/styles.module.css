@@ -10,16 +10,20 @@
 .SummItem__img {
     width: 40px;
 }
+
 .SummItem__img img {
     width: 100%;
 }
+
 .SummItem__title {
     width: 340px;
 }
+
 .SummItem h3 {
     font-size: .95rem;
     font-weight: 400;
 }
+
 .SummItem p {
     font-size: .95rem;
 }

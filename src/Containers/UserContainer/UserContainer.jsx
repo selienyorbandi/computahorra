@@ -14,20 +14,20 @@ function UserContainer() {
   useEffect(() => {
     if (user) {
       const db = getFirestore();
-      const queryDb = doc(db,"users", user.uid);
+      const queryDb = doc(db, "users", user.uid);
       getDoc(queryDb)
-        .then(response => setUserData({id: response.id, ...response.data()}))
-        .catch(err => console.log(err));
+        .then((response) =>
+          setUserData({ id: response.id, ...response.data() })
+        )
+        .catch((err) => console.log(err));
     }
   }, [setUserData, user]);
 
   return (
     <div className={styles.UserContainer}>
-      
-      {user ? <UserProfile/> : <Login/>}
+      {user ? <UserProfile /> : <Login />}
     </div>
   );
-
 }
 
 export default UserContainer;

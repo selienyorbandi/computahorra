@@ -37,12 +37,14 @@
     font-weight: 400;
     margin: .5rem 0;
 }
+
 .ItemDetail__btns {
     margin-top: 1rem;
     gap: 1rem;
     display: flex;
     flex-direction: column;
 }
+
 .ItemDetail__btns button {
     width: 100%;
 }
@@ -65,9 +67,11 @@
         margin: .5rem auto 2rem auto;
         padding: 3.5rem 1rem;
     }
+
     .ItemDetail__data {
         width: 65%;
     }
+
     .ItemDetail__img {
         width: 250px;
         height: 250px;
@@ -75,10 +79,12 @@
         display: flex;
     }
 }
+
 @media screen and (min-width: 1400px) {
     .ItemDetail {
         margin: 3rem auto;
     }
+
     .ItemDetail__data {
         width: 65%;
     }
