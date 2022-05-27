@@ -6,15 +6,22 @@ import { useCartContext } from "context/CartContext";
 
 import styles from "./styles.module.css";
 
-function CartWidget(){
+function CartWidget() {
   const { totalQuantity } = useCartContext();
-    
-  return(
+
+  return (
     <Link to="/cart" className={styles.CartWidget}>
-      <FontAwesomeIcon icon={faCartShopping} className={styles.FontAwesomeIcon}/>
-      {totalQuantity() > 0 ? <div className={styles.CartWidget__ItemCount}>{totalQuantity()}</div> : <></> }
+      <FontAwesomeIcon
+        icon={faCartShopping}
+        className={styles.FontAwesomeIcon}
+      />
+      {totalQuantity() > 0 ? (
+        <div className={styles.CartWidget__ItemCount}>{totalQuantity()}</div>
+      ) : (
+        <></>
+      )}
     </Link>
   );
 }
-  
+
 export default CartWidget;

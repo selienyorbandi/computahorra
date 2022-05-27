@@ -15,18 +15,18 @@ function ItemDetailContainer() {
   useEffect(() => {
     setLoading(true);
     const db = getFirestore();
-    const queryDb = doc(db,"items", id);
+    const queryDb = doc(db, "items", id);
     getDoc(queryDb)
-      .then(response => setItem({id: response.id, ...response.data()}))
-      .catch(err => console.log(err))
-      .finally(()=> setLoading(false));
+      .then((response) => setItem({ id: response.id, ...response.data() }))
+      .catch((err) => console.log(err))
+      .finally(() => setLoading(false));
   }, [id]);
 
   return (
     <article className={styles.ItemDetailContainer}>
-      {loading ? <Loader/> : <ItemDetail item={item}/> }
+      {loading ? <Loader /> : <ItemDetail item={item} />}
     </article>
   );
 }
-                                     
+
 export default ItemDetailContainer;

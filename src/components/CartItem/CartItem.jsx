@@ -9,8 +9,8 @@ import ItemCount from "components/ItemCount/ItemCount";
 
 import styles from "./styles.module.css";
 
-function CartItem({item}) {
-  const { title, thumbnail, price, quantity, stock, id }= item;
+function CartItem({ item }) {
+  const { title, thumbnail, price, quantity, stock, id } = item;
   const { removeItem } = useCartContext();
 
   return (
@@ -21,12 +21,20 @@ function CartItem({item}) {
         </div>
       </Link>
       <Link to={`/item/${item.id}`}>
-        <div className={styles.CartItem__title}><h3>{title}</h3></div>
+        <div className={styles.CartItem__title}>
+          <h3>{title}</h3>
+        </div>
       </Link>
       <div className={styles.CartItem__bRow}>
-        <div className={styles.CartItem__price}><p>{formatPrice(price*quantity)}</p></div>
-        <div className={`${styles.CartItem__count}`}><ItemCount btn={false} initial={quantity} stock={stock} item={item} /></div>
-        <div className={styles.CartItem__delete} onClick={()=> removeItem(id)}><FontAwesomeIcon icon={ faTrashCan }/></div>
+        <div className={styles.CartItem__price}>
+          <p>{formatPrice(price * quantity)}</p>
+        </div>
+        <div className={`${styles.CartItem__count}`}>
+          <ItemCount btn={false} initial={quantity} stock={stock} item={item} />
+        </div>
+        <div className={styles.CartItem__delete} onClick={() => removeItem(id)}>
+          <FontAwesomeIcon icon={faTrashCan} />
+        </div>
       </div>
     </div>
   );

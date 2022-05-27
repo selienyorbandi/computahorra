@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {  faFacebookF, faInstagram, faWhatsapp, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebookF,
+  faInstagram,
+  faWhatsapp,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 
 import NewsletterAdd from "./NewsletterAdd/NewsletterAdd";
 
@@ -19,16 +24,40 @@ function Footer(props) {
             <Link to="/garantia-y-devoluciones">Garantía y devoluciones</Link>
             <Link to="/ayuda">Preguntas frecuentes</Link>
           </ul>
-          <hr className={styles.Footer__content__hr}/>
+          <hr className={styles.Footer__content__hr} />
           <ul className={styles.Footer__content__row}>
-            <li><a href="https://www.linkedin.com/in/selien-yorbandi-92a582210/" target="_blank" rel="noreferrer">Copyright © {new Date().getFullYear()} Computahorra</a></li>
-            <li><a href="https://www.linkedin.com/in/selien-yorbandi-92a582210/" target="_blank" rel="noreferrer">Desarrollado por Selien Yorbandi</a></li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/selien-yorbandi-92a582210/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Copyright © {new Date().getFullYear()} Computahorra
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/selien-yorbandi-92a582210/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Desarrollado por Selien Yorbandi
+              </a>
+            </li>
           </ul>
-          <ul className={styles.Footer__content__row}> 
-            <li><FontAwesomeIcon icon={faFacebookF} size="2xl"/></li>
-            <li><FontAwesomeIcon icon={faInstagram} size="2xl"/></li>
-            <li><FontAwesomeIcon icon={faWhatsapp} size="2xl"/></li>
-            <li><FontAwesomeIcon icon={faYoutube} size="2xl"/></li>
+          <ul className={styles.Footer__content__row}>
+            <li>
+              <FontAwesomeIcon icon={faFacebookF} size="2xl" />
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faInstagram} size="2xl" />
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faWhatsapp} size="2xl" />
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faYoutube} size="2xl" />
+            </li>
           </ul>
         </div>
       </footer>

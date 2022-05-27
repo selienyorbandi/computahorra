@@ -20,11 +20,11 @@ En detalle en [package.json](https://github.com/selienyorbandi/computahorra/blob
 
 Además del uso de React, hago uso de las siguientes dependencias externas:
 
-| Nombre         | Versión  | Utilidad            |
-|-------------------|-------------|---------------|
-| React Router  | 6.2.2   | Para realizar la navegación de SPA|
-| Firebase | 9.6.10 | Es una solución sencilla a la necesidad de una base de datos             |
-| React FontAwesome        | 0.1.17       | Por la facilidad para insertar íconos y modificar su apariencia al comportarse como una tipografía.|
+| Nombre            | Versión | Utilidad                                                                                            |
+| ----------------- | ------- | --------------------------------------------------------------------------------------------------- |
+| React Router      | 6.2.2   | Para realizar la navegación de SPA                                                                  |
+| Firebase          | 9.6.10  | Es una solución sencilla a la necesidad de una base de datos                                        |
+| React FontAwesome | 0.1.17  | Por la facilidad para insertar íconos y modificar su apariencia al comportarse como una tipografía. |
 
 ### De desarrollo
 

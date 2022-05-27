@@ -40,7 +40,7 @@
     border-radius: 10px;
     border: var(--primary-color) 1px solid;
   }
-  
+
   .NavBar_categories__baloon a,
   .NavBar_categories__baloon p {
     text-decoration: none;

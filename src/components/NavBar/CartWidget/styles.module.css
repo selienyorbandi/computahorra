@@ -3,6 +3,7 @@
     text-decoration: none;
     color: #000;
 }
+
 .CartWidget:hover {
     color: var(--primary-color);
     transform: scale(1.1);

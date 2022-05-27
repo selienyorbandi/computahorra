@@ -8,10 +8,13 @@ import images from "assets/img/promotions/promotions.js";
 function Header() {
   return (
     <header>
-      <NavBar/>
+      <NavBar />
       <Routes>
-        <Route path="/" element={ <Slideshow images={images} autoplay controls /> }/>
-        <Route path="*" element={ <></> }/>
+        <Route
+          path="/"
+          element={<Slideshow images={images} autoplay controls />}
+        />
+        <Route path="*" element={<></>} />
       </Routes>
     </header>
   );

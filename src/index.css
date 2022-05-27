@@ -27,6 +27,6 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto auto auto;
- justify-tracks: center;
+  justify-tracks: center;
   grid-column: auto;
 }
