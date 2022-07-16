@@ -4,14 +4,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { CartContextProvider } from "context/CartContext";
 import { AuthContextProvider } from "context/AuthContext";
 
-/* import ItemListContainer from "containers/ItemListContainer/ItemListContainer";
-import ItemDetailContainer from "containers/ItemDetailContainer/ItemDetailContainer";
-import CartContainer from "containers/CartContainer/CartContainer";
-import CheckoutContainer from "containers/CheckoutContainer/CheckoutContainer";
-import UserContainer from "containers/UserContainer/UserContainer";
-import PoliticaDePrivacidad from "pages/PoliticaDePrivacidad/PoliticaDePrivacidad";
-import TerminosYCondiciones from "pages/TerminosYCondiciones/TerminosYCondiciones";
-import GarantiaYDevoluciones from "pages/GarantiaYDevoluciones/GarantiaYDevoluciones"; */
+import ItemListContainer from "containers/ItemListContainer/ItemListContainer";
 
 import Header from "components/Header/Header";
 import Footer from "components/Footer/Footer";
@@ -23,9 +16,6 @@ import "App.css";
 import Loader from "components/Loader/Loader";
 
 function App() {
-  const ItemListContainer = lazy(() =>
-    import("containers/ItemListContainer/ItemListContainer")
-  );
   const ItemDetailContainer = lazy(() =>
     import("containers/ItemDetailContainer/ItemDetailContainer")
   );
