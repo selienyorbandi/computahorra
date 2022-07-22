@@ -1,16 +1,10 @@
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import { CartContextProvider } from "context/CartContext";
 import { AuthContextProvider } from "context/AuthContext";
 
 import ItemListContainer from "containers/ItemListContainer/ItemListContainer";
-import ItemDetailContainer from "containers/ItemDetailContainer/ItemDetailContainer";
-import CartContainer from "containers/CartContainer/CartContainer";
-import CheckoutContainer from "containers/CheckoutContainer/CheckoutContainer";
-import UserContainer from "containers/UserContainer/UserContainer";
-import PoliticaDePrivacidad from "pages/PoliticaDePrivacidad/PoliticaDePrivacidad";
-import TerminosYCondiciones from "pages/TerminosYCondiciones/TerminosYCondiciones";
-import GarantiaYDevoluciones from "pages/GarantiaYDevoluciones/GarantiaYDevoluciones";
 
 import Header from "components/Header/Header";
 import Footer from "components/Footer/Footer";
@@ -19,8 +13,31 @@ import Login from "components/Login/Login";
 import Register from "components/Register/Register";
 
 import "App.css";
+import Loader from "components/Loader/Loader";
 
 function App() {
+  const ItemDetailContainer = lazy(() =>
+    import("containers/ItemDetailContainer/ItemDetailContainer")
+  );
+  const CartContainer = lazy(() =>
+    import("containers/CartContainer/CartContainer")
+  );
+  const CheckoutContainer = lazy(() =>
+    import("containers/CheckoutContainer/CheckoutContainer")
+  );
+  const UserContainer = lazy(() =>
+    import("containers/UserContainer/UserContainer")
+  );
+  const PoliticaDePrivacidad = lazy(() =>
+    import("pages/PoliticaDePrivacidad/PoliticaDePrivacidad")
+  );
+  const TerminosYCondiciones = lazy(() =>
+    import("pages/TerminosYCondiciones/TerminosYCondiciones")
+  );
+  const GarantiaYDevoluciones = lazy(() =>
+    import("pages/GarantiaYDevoluciones/GarantiaYDevoluciones")
+  );
+  
   return (
     <div className="Wrapper">
       <AuthContextProvider>
@@ -32,33 +49,97 @@ function App() {
               <Routes>
                 <Route
                   path="/"
-                  element={<ItemListContainer trending={true} />}
+                  element={
+                    <Suspense fallback={<Loader />}>
+                      <ItemListContainer trending={true} />
+                    </Suspense>
+                  }
                 />
-                <Route path="/item/:id" element={<ItemDetailContainer />} />
+                <Route path="/item/:id"  element={ 
+                  <Suspense fallback={<Loader />}>
+                    <ItemDetailContainer />
+                  </Suspense>
+                }>
+                </Route>
                 <Route
                   path="/category/:id"
-                  element={<ItemListContainer categoryFilter={true} />}
+                  element={
+                    <Suspense fallback={<Loader />}>
+                      <ItemListContainer categoryFilter={true} />
+                    </Suspense>
+                  }
                 />
                 <Route
                   path="/search/:keywords"
-                  element={<ItemListContainer search={true} />}
+                  element={
+                    <Suspense fallback={<Loader />}>
+                      <ItemListContainer search={true} />
+                    </Suspense>
+                  }
                 />
-                <Route path="/cart" element={<CartContainer />} />
-                <Route path="/checkout" element={<CheckoutContainer />} />
-                <Route path="/user/*" element={<UserContainer />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
+                <Route
+                  path="/cart"
+                  element={
+                    <Suspense fallback={<Loader />}>
+                      <CartContainer />
+                    </Suspense>
+                  }
+                />
+                <Route
+                  path="/checkout"
+                  element={
+                    <Suspense fallback={<Loader />}>
+                      <CheckoutContainer />
+                    </Suspense>
+                  }
+                />
+                <Route
+                  path="/user/*"
+                  element={
+                    <Suspense fallback={<Loader />}>
+                      <UserContainer />
+                    </Suspense>
+                  }
+                />
+                <Route
+                  path="/login"
+                  element={
+                    <Suspense fallback={<Loader />}>
+                      <Login />
+                    </Suspense>
+                  }
+                />
+                <Route
+                  path="/register"
+                  element={
+                    <Suspense fallback={<Loader />}>
+                      <Register />
+                    </Suspense>
+                  }
+                />
                 <Route
                   path="/politica-de-privacidad/*"
-                  element={<PoliticaDePrivacidad />}
+                  element={
+                    <Suspense fallback={<Loader />}>
+                      <PoliticaDePrivacidad />
+                    </Suspense>
+                  }
                 />
                 <Route
                   path="/terminos-y-condiciones/*"
-                  element={<TerminosYCondiciones />}
+                  element={
+                    <Suspense fallback={<Loader />}>
+                      <TerminosYCondiciones />
+                    </Suspense>
+                  }
                 />
                 <Route
                   path="/garantia-y-devoluciones/*"
-                  element={<GarantiaYDevoluciones />}
+                  element={
+                    <Suspense fallback={<Loader />}>
+                      <GarantiaYDevoluciones />
+                    </Suspense>
+                  }
                 />
                 <Route path="*" element={<Navigate replace to="/" />} />
               </Routes>

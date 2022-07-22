@@ -16,6 +16,7 @@ function Item({ item }) {
             className={styles.Item__img}
             width="225"
             height="225"
+            loading="lazy"
           />
         </div>
         <span className={styles.Item__price}>{formatPrice(price)}</span>
