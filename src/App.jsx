@@ -37,7 +37,7 @@ function App() {
   const GarantiaYDevoluciones = lazy(() =>
     import("pages/GarantiaYDevoluciones/GarantiaYDevoluciones")
   );
-
+  
   return (
     <div className="Wrapper">
       <AuthContextProvider>
@@ -55,7 +55,12 @@ function App() {
                     </Suspense>
                   }
                 />
-                <Route path="/item/:id" element={<ItemDetailContainer />} />
+                <Route path="/item/:id"  element={ 
+                  <Suspense fallback={<Loader />}>
+                    <ItemDetailContainer />
+                  </Suspense>
+                }>
+                </Route>
                 <Route
                   path="/category/:id"
                   element={
