@@ -1,0 +1,140 @@
+import { useState, useRef } from "react";
+import { NavLink } from "react-router-dom";
+import { query, collection } from "firebase/firestore";
+import { useFirestoreQueryData } from "@react-query-firebase/firestore";
+import { firestore } from "../../../firebase/firebase";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUser,
+  faBagShopping,
+  faCaretDown,
+  faMagnifyingGlass,
+} from "@fortawesome/free-solid-svg-icons";
+
+import styles from "./styles.module.css";
+import logo from "../../../assets/img/brandLogo.png";
+import SearchBar from "./search-bar/SearchBar";
+import UserWidget from "./user-widget/UserWidget";
+import CartWidget from "./cart-widget/CartWidget";
+import useOnClickOutside from "../../../hooks/useOnClickOutside";
+import { ICategory } from "../../../models/category.interface";
+import CategoriesDropdown from "./categories-dropdown/CategoriesDropdown";
+
+function NavBar() {
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
+  const [openCategories, setOpenCategories] = useState<boolean>(false);
+  const categoriesMenuRef = useRef<HTMLDivElement>(null);
+  const navMenuRef = useRef<HTMLDivElement>(null);
+  const [categories, setCategories] = useState<ICategory[]>([]);
+
+  const clickOutsideHandler = () => {
+    setOpenMenu(false);
+    setOpenCategories(false);
+  };
+
+  useOnClickOutside(navMenuRef, clickOutsideHandler);
+
+  const handleMenuClick = () => {
+    setOpenCategories(false);
+    if (openMenu) {
+      setOpenMenu(false);
+    } else {
+      setOpenMenu(true);
+    }
+  };
+  const handleCategoriesClick = () => {
+    openCategories ? setOpenCategories(false) : setOpenCategories(true);
+  };
+
+  const refGetCategories = query(collection(firestore, "categories"));
+  useFirestoreQueryData(
+    ["categories"],
+    refGetCategories,
+    {
+      subscribe: false,
+      source: "cache",
+    },
+    {
+      onSuccess(data) {
+        setCategories(data as ICategory[]);
+      },
+      onError(err) {
+        console.log(err);
+      },
+    }
+  );
+
+  return (
+    <nav className={styles.Navigation} ref={navMenuRef}>
+      <div className={styles.Navigation__NavBarCnt}>
+        <div className={styles.Navigation__NavBar}>
+          <div className={styles.NavBar__btnMenu} onClick={handleMenuClick}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <NavLink to={"/"}>
+            <div className={styles.NavBar__brandLogo}>
+              <img src={logo} alt="Computahorra logo" width="132" height="44" />
+            </div>
+          </NavLink>
+          <SearchBar />
+          <div className={styles.NavBar__icons}>
+            <span>
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
+            </span>
+            <UserWidget />
+            <CartWidget />
+          </div>
+        </div>
+      </div>
+      <ul className={styles.NavBar__list}>
+        <div className={styles.NavBar__list__content}>
+          <NavLink to="/">Inicio</NavLink>
+          <li onClick={handleCategoriesClick}>
+            Categorías&nbsp;
+            <FontAwesomeIcon icon={faCaretDown} className={styles.NavBar__categories} />
+            {openCategories ? (
+              <div ref={categoriesMenuRef}>
+                <CategoriesDropdown categories={categories} />
+              </div>
+            ) : (
+              <></>
+            )}
+          </li>
+          <NavLink to="/ayuda">Centro de ayuda</NavLink>
+          <NavLink to="/nosotros">Nosotros</NavLink>
+          <li>Contacto</li>
+        </div>
+      </ul>
+      {openMenu ? (
+        <ul className={styles.NavBar__menu}>
+          <NavLink to="/user">
+            Mi perfil <FontAwesomeIcon icon={faUser} />
+          </NavLink>
+          <li>
+            Mis compras <FontAwesomeIcon icon={faBagShopping} />
+          </li>
+          <li onClick={handleCategoriesClick}>
+            Categorías <FontAwesomeIcon icon={faCaretDown} />
+            {openCategories ? (
+              <div ref={categoriesMenuRef}>
+                <CategoriesDropdown categories={categories} />
+              </div>
+            ) : (
+              <></>
+            )}
+          </li>
+          <NavLink to="/">Inicio</NavLink>
+          <NavLink to="/ayuda">Centro de ayuda</NavLink>
+          <NavLink to="/nosotros">Nosotros</NavLink>
+          <li>Contacto</li>
+        </ul>
+      ) : (
+        ""
+      )}
+    </nav>
+  );
+}
+
+export default NavBar;
