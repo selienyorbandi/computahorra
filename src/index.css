@@ -7,7 +7,9 @@
   --lighter-color: #fbfbfb;
   --dark-color: #2b272e;
   --darkest-color: #171717;
-  --btn-color: var(--primary-color);
+  --success-color: #34a835;
+  --danger-color: #e91224;
+  --warning-color: #ffba01;
 }
 
 * {

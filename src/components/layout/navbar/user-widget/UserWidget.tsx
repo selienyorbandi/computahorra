@@ -6,7 +6,7 @@ import styles from "./styles.module.css";
 
 function UserWidget() {
   return (
-    <Link to="/user" className={styles.CartWidget}>
+    <Link to="/usuario" className={styles.CartWidget}>
       <FontAwesomeIcon icon={faUser} className={styles.FontAwesomeIcon} />
     </Link>
   );

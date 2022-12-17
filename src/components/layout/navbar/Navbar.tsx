@@ -17,15 +17,14 @@ import SearchBar from "./search-bar/SearchBar";
 import UserWidget from "./user-widget/UserWidget";
 import CartWidget from "./cart-widget/CartWidget";
 import useOnClickOutside from "../../../hooks/useOnClickOutside";
-import { ICategory } from "../../../models/category.interface";
 import CategoriesDropdown from "./categories-dropdown/CategoriesDropdown";
+import { ICategory } from "../../../models/category.interface";
 
 function NavBar() {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   const [openCategories, setOpenCategories] = useState<boolean>(false);
   const categoriesMenuRef = useRef<HTMLDivElement>(null);
   const navMenuRef = useRef<HTMLDivElement>(null);
-  const [categories, setCategories] = useState<ICategory[]>([]);
 
   const clickOutsideHandler = () => {
     setOpenMenu(false);
@@ -47,7 +46,7 @@ function NavBar() {
   };
 
   const refGetCategories = query(collection(firestore, "categories"));
-  useFirestoreQueryData(
+  const queryCategories = useFirestoreQueryData(
     ["categories"],
     refGetCategories,
     {
@@ -55,14 +54,15 @@ function NavBar() {
       source: "cache",
     },
     {
-      onSuccess(data) {
-        setCategories(data as ICategory[]);
-      },
-      onError(err) {
-        console.log(err);
-      },
+      refetchOnWindowFocus: false,
+      refetchInterval: 30 * 6 * 1000,
+      refetchIntervalInBackground: false,
     }
   );
+
+  const categories = () => {
+    return queryCategories.data as ICategory[];
+  };
 
   return (
     <nav className={styles.Navigation} ref={navMenuRef}>
@@ -94,9 +94,9 @@ function NavBar() {
           <li onClick={handleCategoriesClick}>
             Categorías&nbsp;
             <FontAwesomeIcon icon={faCaretDown} className={styles.NavBar__categories} />
-            {openCategories ? (
+            {openCategories && queryCategories.data ? (
               <div ref={categoriesMenuRef}>
-                <CategoriesDropdown categories={categories} />
+                <CategoriesDropdown categories={categories()} />
               </div>
             ) : (
               <></>
@@ -117,9 +117,9 @@ function NavBar() {
           </li>
           <li onClick={handleCategoriesClick}>
             Categorías <FontAwesomeIcon icon={faCaretDown} />
-            {openCategories ? (
+            {openCategories && queryCategories.data ? (
               <div ref={categoriesMenuRef}>
-                <CategoriesDropdown categories={categories} />
+                <CategoriesDropdown categories={categories()} />
               </div>
             ) : (
               <></>

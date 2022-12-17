@@ -7,7 +7,7 @@ function CategoriesDropdown({ categories }: { categories: ICategory[] }) {
     <div className={styles.NavBar_categories}>
       <div className={styles.NavBar_categories__baloon}>
         {categories.map(category => (
-          <NavLink key={category.id} to={`/category/${category.id}`}>
+          <NavLink key={category.id} to={`/categoria/${category.id}`}>
             <p key={category.id} className={styles.NavBar__categoriesDropdown}>
               {category.name}
             </p>

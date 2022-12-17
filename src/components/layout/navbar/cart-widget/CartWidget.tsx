@@ -5,15 +5,16 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { useCartContext } from "../../../../context/CartContext";
 
 import styles from "./styles.module.css";
+import { ICartContext } from "../../../../models/cartcontext.interface";
 
 function CartWidget() {
-  const context = useCartContext();
+  const { getTotalQuantity, cartList } = useCartContext() as ICartContext;
 
   return (
-    <Link to="/cart" className={styles.CartWidget}>
+    <Link to="/carrito" className={styles.CartWidget}>
       <FontAwesomeIcon icon={faCartShopping} className={styles.FontAwesomeIcon} />
-      {context && context.getTotalQuantity() > 0 ? (
-        <div className={styles.CartWidget__ItemCount}>{context.getTotalQuantity()}</div>
+      {cartList && getTotalQuantity() > 0 ? (
+        <div className={styles.CartWidget__ItemCount}>{getTotalQuantity()}</div>
       ) : (
         <></>
       )}

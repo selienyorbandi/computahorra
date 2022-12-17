@@ -11,4 +11,5 @@ export interface ICartContext {
   getTotalQuantity: () => number;
   isInCart: (itemId: string) => boolean;
   removeItem: (itemId: string) => void;
+  changeQuantity: (itemId: string, newQuantity: number) => void;
 }

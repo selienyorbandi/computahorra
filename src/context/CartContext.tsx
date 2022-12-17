@@ -10,7 +10,10 @@ export function CartContextProvider({ children }: { children: JSX.Element }) {
   const [cartList, setCartList] = useState<ICartItem[] | []>([]);
 
   const addItem = (item: IItem, quantity: number) => {
-    const itemToAdd = Object.assign(item, { quantity: quantity });
+    const itemToAdd: ICartItem = {
+      ...item,
+      quantity,
+    };
     if (isInCart(item.id)) {
       let newQuantity;
       item.stock > quantity + getCurrentQuantity(item.id)
@@ -33,7 +36,7 @@ export function CartContextProvider({ children }: { children: JSX.Element }) {
   };
 
   const isInCart = (itemId: string) => {
-    if(cartList.find(item => item.id === itemId)) {
+    if (cartList.find(item => item.id === itemId)) {
       return true;
     } else {
       return false;
@@ -83,6 +86,7 @@ export function CartContextProvider({ children }: { children: JSX.Element }) {
         getTotalQuantity,
         isInCart,
         removeItem,
+        changeQuantity,
       }}>
       {children}
     </CartContext.Provider>
