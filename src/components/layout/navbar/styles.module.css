@@ -27,15 +27,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.NavBar__brandLogo {
-  width: calc(120px + 4vw);
-}
-
-.NavBar__brandLogo > img {
-  width: 100%;
-  height: auto;
+  gap: 1rem;
 }
 
 .NavBar__btnMenu {
@@ -61,7 +53,6 @@
 
 .NavBar__icons {
   height: 40px;
-  width: 80px;
   font-size: 30px;
   display: flex;
   justify-content: center;
@@ -114,6 +105,25 @@
   text-decoration: none;
 }
 
+.NavBar__brandLogo {
+  display: none;
+}
+
+.NavBar__menu__brandLogo {
+  transform: scale(1.3);
+  border-radius: 10px;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+
+hr {
+  border: solid 1px #762ab01b;
+  align-self: center;
+  justify-self: center;
+  margin: 1rem auto;
+}
+
 @media screen and (min-width: 1100px) {
   .NavBar__btnMenu,
   .NavBar__menu {
@@ -162,5 +172,15 @@
 
   .NavBar__icons > span:nth-child(2) {
     display: inline;
+  }
+
+  .NavBar__brandLogo {
+    display: flex;
+    width: calc(120px + 4vw);
+  }
+
+  .NavBar__brandLogo > img {
+    width: 100%;
+    height: auto;
   }
 }

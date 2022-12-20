@@ -4,12 +4,7 @@ import { query, collection } from "firebase/firestore";
 import { useFirestoreQueryData } from "@react-query-firebase/firestore";
 import { firestore } from "../../../firebase/firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUser,
-  faBagShopping,
-  faCaretDown,
-  faMagnifyingGlass,
-} from "@fortawesome/free-solid-svg-icons";
+import { faUser, faBagShopping, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./styles.module.css";
 import logo from "../../../assets/img/brandLogo.png";
@@ -80,9 +75,6 @@ function NavBar() {
           </NavLink>
           <SearchBar />
           <div className={styles.NavBar__icons}>
-            <span>
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
-            </span>
             <UserWidget />
             <CartWidget />
           </div>
@@ -103,12 +95,17 @@ function NavBar() {
             )}
           </li>
           <NavLink to="/ayuda">Centro de ayuda</NavLink>
-          <NavLink to="/nosotros">Nosotros</NavLink>
-          <li>Contacto</li>
+          <NavLink to="/Contact">Contacto</NavLink>
         </div>
       </ul>
       {openMenu ? (
         <ul className={styles.NavBar__menu}>
+          <NavLink to={"/"}>
+            <div className={styles.NavBar__menu__brandLogo}>
+              <img src={logo} alt="Computahorra logo" width="132" height="44" />
+            </div>
+            <hr />
+          </NavLink>
           <NavLink to="/user">
             Mi perfil <FontAwesomeIcon icon={faUser} />
           </NavLink>
@@ -127,8 +124,7 @@ function NavBar() {
           </li>
           <NavLink to="/">Inicio</NavLink>
           <NavLink to="/ayuda">Centro de ayuda</NavLink>
-          <NavLink to="/nosotros">Nosotros</NavLink>
-          <li>Contacto</li>
+          <NavLink to="/contacto">Contacto</NavLink>
         </ul>
       ) : (
         ""
