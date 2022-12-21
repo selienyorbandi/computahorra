@@ -1,20 +1,19 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { search } from "ss-search";
-import Button from "../../components/button/Button";
 import Loader from "../../components/loader/Loader";
 import { IItem } from "../../models/item.interface";
 import styles from "./styles.module.css";
 import ItemList from "../../components/items/item-list/ItemList";
-import notFoundImg from "../../assets/img/not-found.gif";
+import NotFoundItems from "../../components/not-found/not-found-items/NotFoundItems";
 
 function Search() {
   const { keywords } = useParams();
   const [searchResults, setSearchResults] = useState<IItem[]>([]);
 
   const { isLoading } = useQuery(
-    "repoData",
+    "searchItems",
     () => fetch("https://api.npoint.io/f2c827eee89e5f676ceb").then(res => res.json()),
     {
       onSuccess(data) {
@@ -41,13 +40,7 @@ function Search() {
           <ItemList items={searchResults} /> : <></>
         </>
       ) : (
-        <div className={styles.Search__doesntExist}>
-          <img src={notFoundImg} alt="Producto no encontrado" width="250px" height="140px" />
-          <h1>No se ha encontrado ningún resultado</h1>
-          <Link to="/">
-            <Button message="Volver al inicio" type="primary" />
-          </Link>
-        </div>
+        <NotFoundItems />
       )}
     </section>
   );
