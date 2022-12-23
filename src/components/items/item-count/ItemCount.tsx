@@ -11,12 +11,12 @@ import Button from "../../button/Button";
 interface ITemCountProps {
   stock: number;
   initial: number;
-  message: string;
-  size: string;
-  expanded: boolean;
+  message?: string;
+  size?: string;
+  expanded?: boolean;
   btn?: boolean;
   item: IItem;
-  onAddToCart: () => void;
+  onAddToCart?: () => void;
 }
 
 function ItemCount({
@@ -52,12 +52,18 @@ function ItemCount({
 
   const onAdd = () => {
     addItem(item, quantity);
-    onAddToCart();
+    if (onAddToCart) {
+      onAddToCart();
+    }
   };
 
   return (
     <div className={styles.ItemCount}>
-      {btn ? <Button message={message} onClick={onAdd} type="secondary" size={size} /> : <></>}
+      {btn && message ? (
+        <Button message={message} onClick={onAdd} type="secondary" size={size} />
+      ) : (
+        <></>
+      )}
       {expanded ? (
         stock > 0 ? (
           <div className={styles.ItemCount__stock}>¡Stock disponible!</div>

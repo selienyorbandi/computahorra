@@ -11,7 +11,7 @@ function CartWidget() {
   const { getTotalQuantity, cartList } = useCartContext() as ICartContext;
 
   return (
-    <Link to="/carrito" className={styles.CartWidget}>
+    <Link to="/carrito-de-compras" className={styles.CartWidget}>
       <FontAwesomeIcon icon={faCartShopping} className={styles.FontAwesomeIcon} />
       {cartList && getTotalQuantity() > 0 ? (
         <div className={styles.CartWidget__ItemCount}>{getTotalQuantity()}</div>

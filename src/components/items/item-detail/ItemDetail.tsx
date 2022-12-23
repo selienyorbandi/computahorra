@@ -31,7 +31,7 @@ function ItemDetail({ item }: { item: IItem }) {
         <div className={styles.ItemDetail__btns}>
           {selectedCount ? (
             <>
-              <Link to="/carrito">
+              <Link to="/carrito-de-compras">
                 <Button message={"Ir al carrito y terminar compra"} size="md" type="primary" />
               </Link>
               <Link to="/">
@@ -40,7 +40,7 @@ function ItemDetail({ item }: { item: IItem }) {
             </>
           ) : (
             <>
-              <Link to="/carrito">
+              <Link to="/carrito-de-compras">
                 <Button
                   message={"Comprar ahora"}
                   onClick={() => buyNow(item)}
