@@ -14,6 +14,7 @@ const Home = lazy(() => import("./pages/home/Home.page"));
 const Search = lazy(() => import("./pages/search/Search.page"));
 const Category = lazy(() => import("./pages/category/Category.page"));
 const Cart = lazy(() => import("./pages/cart/Cart.page"));
+const Checkout = lazy(() => import("./pages/checkout/Checkout.page"));
 
 function App() {
   const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ function App() {
                   <Route path="/categoria/:category" element={<Category />} />
                   <Route path="/search/:keywords" element={<Search />} />
                   <Route path="/carrito-de-compras" element={<Cart />} />
+                  <Route path="/checkout" element={<Checkout />} />
                   <Route path="/politica-de-privacidad" element={<PoliticaDePrivacidad />} />
                   <Route path="/terminos-y-condiciones" element={<TerminosYCondiciones />} />
                   <Route path="/garantia-y-devoluciones" element={<GarantiaYDevoluciones />} />
