@@ -46,7 +46,8 @@ function Button({ message, onClick, size, disabl = false, type = "secondary" }: 
         `}
       onClick={onClick}
       disabled={disabl}
-      style={handleBtnTypeStyle()}>
+      style={handleBtnTypeStyle()}
+      type={type === "primary" ? "submit" : "button"}>
       {message}
     </button>
   );
