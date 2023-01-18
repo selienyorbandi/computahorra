@@ -106,7 +106,7 @@ function NavBar() {
             </div>
             <hr />
           </NavLink>
-          <NavLink to="/user">
+          <NavLink to="/usuario">
             Mi perfil <FontAwesomeIcon icon={faUser} />
           </NavLink>
           <li>

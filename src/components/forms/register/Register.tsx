@@ -19,6 +19,7 @@ import { auth, firestore } from "../../../firebase/firebase";
 import { ErrorFeedback } from "../../error/ErrorFeedback";
 import { useFirestoreCollectionMutation } from "@react-query-firebase/firestore";
 import { collection } from "firebase/firestore";
+import { hashPassword } from "../../../utils/hashPassword";
 
 function Register() {
   const navigate = useNavigate();
@@ -34,19 +35,20 @@ function Register() {
   const usersRef = collection(firestore, "users");
   const mutationPostUser = useFirestoreCollectionMutation(usersRef);
 
-  const handleSignUp = () => {
+  const handleSignUp = async () => {
     mutationSignUp.mutate(
       {
         email: user.email,
         password: user.password,
       },
       {
-        onSuccess(data) {
+        async onSuccess(data) {
+          const adaptedUser = await adaptUser();
           mutationPostUser.mutate(
-            { ...user, uid: data.user.uid },
+            { ...adaptedUser, uid: data.user.uid },
             {
               onSuccess() {
-                navigate("/");
+                navigate("/usuario");
               },
             }
           );
@@ -113,6 +115,15 @@ function Register() {
     if (areValidInputs()) {
       handleSignUp();
     }
+  };
+
+  const adaptUser = async () => {
+    const hashedPass = await hashPassword(user.password);
+    return {
+      ...user,
+      password: hashedPass,
+      confirmPassword: hashedPass,
+    };
   };
 
   return (

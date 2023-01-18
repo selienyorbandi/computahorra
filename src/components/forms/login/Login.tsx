@@ -1,22 +1,27 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./styles.module.css";
 import Button from "../../button/Button";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import {
   useAuthSignInWithEmailAndPassword,
   useAuthSignInWithPopup,
+  useAuthUser,
 } from "@react-query-firebase/auth";
-import { auth } from "../../../firebase/firebase";
+import { auth, firestore } from "../../../firebase/firebase";
 import { FacebookAuthProvider, GoogleAuthProvider, TwitterAuthProvider } from "firebase/auth";
 import { ErrorFeedback } from "../../error/ErrorFeedback";
+import { collection } from "firebase/firestore";
+import { useFirestoreCollectionMutation } from "@react-query-firebase/firestore";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const user = useAuthUser(["user"], auth);
+  const navigate = useNavigate();
 
   const mutationAuthEmail = useAuthSignInWithEmailAndPassword(auth, {
     onError(error) {
@@ -44,11 +49,39 @@ function Login() {
 
     const provider = handleProviderType();
     if (provider) {
-      mutationAuthExternalProvider.mutate({
-        provider: provider,
-      });
+      mutationAuthExternalProvider.mutate(
+        {
+          provider: provider,
+        },
+        {
+          async onSuccess(data) {
+            mutationPostUser.mutate(
+              {
+                email: data.user.email,
+                tel: data.user.phoneNumber,
+                uid: data.user.uid,
+                name: data.user.displayName,
+              },
+              {
+                onSuccess() {
+                  navigate("/usuario");
+                },
+              }
+            );
+          },
+        }
+      );
     }
   };
+
+  const usersRef = collection(firestore, "users");
+  const mutationPostUser = useFirestoreCollectionMutation(usersRef);
+
+  useEffect(() => {
+    if (user.data) {
+      navigate("/usuario");
+    }
+  }, [user]);
 
   return (
     <div className={styles.registerForm}>
@@ -83,7 +116,7 @@ function Login() {
         </div>
         <div className={styles.Form__LogBtn}>
           <Button message={"Iniciar Sesión"} type="primary" size="md" />
-          <Link to="/register">
+          <Link to="/registro">
             <Button message={"Crear cuenta"} size="md" type="secondary" />
           </Link>
         </div>
@@ -110,10 +143,6 @@ function Login() {
         </div>
         {mutationAuthEmail.isError && <ErrorFeedback code={mutationAuthEmail.error.code} />}
       </form>
-
-      {mutationAuthEmail.isSuccess && auth.currentUser && (
-        <h3>{auth.currentUser.email} logueado con exito</h3>
-      )}
     </div>
   );
 }

@@ -1,0 +1,17 @@
+.UserHeader {
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.UserHeader svg:hover {
+  cursor: pointer;
+}
+
+.UserHeader h1 {
+  font-size: 2rem;
+}

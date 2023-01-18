@@ -1,0 +1,17 @@
+.UserSection {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.UserSection__Data {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.UserSection__Data hr {
+  width: 100%;
+}
+.UserSection__Data button {
+  align-self: center;
+}
