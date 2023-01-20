@@ -5,8 +5,10 @@ import { useFirestoreDocumentMutation } from "@react-query-firebase/firestore";
 import { collection, doc, DocumentData } from "firebase/firestore";
 import { FormEvent, useState } from "react";
 import Button from "../../../../../components/button/Button";
+import { ErrorFeedback } from "../../../../../components/error/ErrorFeedback";
 import Modal from "../../../../../components/modal/Modal";
 import { auth, firestore } from "../../../../../firebase/firebase";
+import useOnValidate from "../../../../../hooks/useOnValidate";
 import styles from "./styles.module.css";
 
 function DataInput({
@@ -22,7 +24,7 @@ function DataInput({
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [newValue, setNewValue] = useState(value);
-
+  const { errors, validateInputOnBlur } = useOnValidate();
   const userCollection = collection(firestore, "users");
   const userDataref = doc(userCollection, docId);
   const userDataMutation = useFirestoreDocumentMutation(userDataref, { merge: true });
@@ -30,12 +32,14 @@ function DataInput({
 
   const handleUpdate = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    userDataMutation.mutate({
-      ...userData,
-      [handleDocumentFields()]: newValue,
-    });
-    handleEmailUpdate();
-    setIsOpen(false);
+    if (!errors[handleDocumentFields()].is) {
+      userDataMutation.mutate({
+        ...userData,
+        [handleDocumentFields()]: newValue,
+      });
+      handleEmailUpdate();
+      setIsOpen(false);
+    }
   };
 
   const handleDocumentFields = () => {
@@ -43,7 +47,7 @@ function DataInput({
     if (name === "Apellido") return "surname";
     if (name === "Teléfono") return "tel";
     if (name === "Email") return "email";
-    return "z";
+    return "password";
   };
 
   const handleEmailUpdate = () => {
@@ -72,9 +76,10 @@ function DataInput({
               <span>{name}</span>
               <input
                 type="text"
-                name={name}
+                name={handleDocumentFields()}
                 placeholder={name}
                 id={name}
+                onBlur={e => validateInputOnBlur(e)}
                 onChange={e => setNewValue(e.target.value)}
               />
             </label>
@@ -93,6 +98,12 @@ function DataInput({
               />
             </div>
           </form>
+          {userDataMutation.isError ? <ErrorFeedback code={userDataMutation.error.code} /> : <></>}
+          {errors[handleDocumentFields()].is ? (
+            <ErrorFeedback code={errors[handleDocumentFields()].code} />
+          ) : (
+            <></>
+          )}
         </div>
       </Modal>
     </div>

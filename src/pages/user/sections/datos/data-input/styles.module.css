@@ -57,3 +57,8 @@
   display: flex;
   gap: 0.5rem;
 }
+
+.DataInput__Edit p {
+  font-size: 1rem;
+  align-self: center;
+}
