@@ -19,10 +19,15 @@ function Footer() {
         <div className={styles.Footer__content}>
           <ul className={styles.Footer__content__row}>
             <li>Botón de arrepentimiento</li>
-            <Link to="/terminos-y-condiciones">Términos y condiciones</Link>
-            <Link to="/politica-de-privacidad">Política de privacidad</Link>
-            <Link to="/garantia-y-devoluciones">Garantía y devoluciones</Link>
-            <Link to="/ayuda">Preguntas frecuentes</Link>
+            <li>
+              <Link to="/politica-de-privacidad">Política de privacidad</Link>
+            </li>
+            <li>
+              <Link to="/garantia-y-devoluciones">Garantía y devoluciones</Link>
+            </li>
+            <li>
+              <Link to="/ayuda">Preguntas frecuentes</Link>
+            </li>
           </ul>
           <hr className={styles.Footer__content__hr} />
           <ul className={styles.Footer__content__row}>

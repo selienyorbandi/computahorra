@@ -34,6 +34,16 @@ function Category() {
     }
   );
 
+  const handleCategoryName = () => {
+    //Just for categories with more than 1 word
+    if (category === "componentes-pc") return "Componentes de pc";
+    if (category === "computadoras-armadas") return "Computadoras armadas";
+    if (category) {
+      return category[0].toUpperCase() + category.slice(1);
+    }
+    return "";
+  };
+
   return (
     <section className={styles.Category}>
       {queryItemsByCategory.isLoading ? (
@@ -41,7 +51,7 @@ function Category() {
       ) : queryItemsByCategory.data?.length ? (
         <>
           <header>
-            <h1>{category ? category[0].toUpperCase() + category.slice(1) : " "}</h1>
+            <h1>{handleCategoryName()}</h1>
           </header>
           <ItemList items={queryItemsByCategory.data} />
         </>

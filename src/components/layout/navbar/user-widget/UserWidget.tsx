@@ -6,8 +6,8 @@ import styles from "./styles.module.css";
 
 function UserWidget() {
   return (
-    <Link to="/usuario" className={styles.CartWidget}>
-      <FontAwesomeIcon icon={faUser} className={styles.FontAwesomeIcon} />
+    <Link to="/usuario" className={styles.UserWidget}>
+      <FontAwesomeIcon icon={faUser} className={styles.FontAwesomeIcon} title="Usuario" />
     </Link>
   );
 }

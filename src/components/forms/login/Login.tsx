@@ -84,66 +84,64 @@ function Login() {
   }, [user]);
 
   return (
-    <div className={styles.registerForm}>
-      <form className={styles.Form} onSubmit={e => onSignIn(e)}>
-        <FontAwesomeIcon icon={faCircleUser} color="#6C2F9A" size="4x" />
-        <h1>Iniciar sesión</h1>
-        <div>
-          <label htmlFor="email">
-            <span>Correo Electrónico *</span>
-            <input
-              type="email"
-              name="email"
-              placeholder="Correo electrónico"
-              required
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="password">
-            <span>Contraseña *</span>
-            <input
-              type="password"
-              name="password"
-              placeholder="Contraseña"
-              required
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-            />
-          </label>
-        </div>
-        <div className={styles.Form__LogBtn}>
-          <Button message={"Iniciar Sesión"} type="primary" size="md" />
-          <Link to="/registro">
-            <Button message={"Crear cuenta"} size="md" type="secondary" />
-          </Link>
-        </div>
-        <p>O continúa con tus redes sociales</p>
-        <div className={styles.Form__socialMedia}>
-          <img
-            src="https://i.postimg.cc/V6QV2gyX/google-Brand.png"
-            width="24"
-            alt="Continuar con Google"
-            onClick={() => onSignWithExternalProvider("google")}
+    <form className={styles.Form} onSubmit={e => onSignIn(e)}>
+      <FontAwesomeIcon icon={faCircleUser} color="#6C2F9A" size="4x" />
+      <h1>Iniciar sesión</h1>
+      <div>
+        <label htmlFor="email">
+          <span>Correo Electrónico *</span>
+          <input
+            type="email"
+            name="email"
+            placeholder="Correo electrónico"
+            required
+            value={email}
+            onChange={e => setEmail(e.target.value)}
           />
-          <FontAwesomeIcon
-            icon={faFacebook}
-            color="#0674DF"
-            size="xl"
-            onClick={() => onSignWithExternalProvider("facebook")}
+        </label>
+      </div>
+      <div>
+        <label htmlFor="password">
+          <span>Contraseña *</span>
+          <input
+            type="password"
+            name="password"
+            placeholder="Contraseña"
+            required
+            value={password}
+            onChange={e => setPassword(e.target.value)}
           />
-          <FontAwesomeIcon
-            icon={faTwitter}
-            color="#00A3E2"
-            size="xl"
-            onClick={() => onSignWithExternalProvider("twitter")}
-          />
-        </div>
-        {mutationAuthEmail.isError && <ErrorFeedback code={mutationAuthEmail.error.code} />}
-      </form>
-    </div>
+        </label>
+      </div>
+      <div className={styles.Form__LogBtn}>
+        <Button message={"Iniciar Sesión"} type="primary" size="md" />
+        <Link to="/registro">
+          <Button message={"Crear cuenta"} size="md" type="secondary" />
+        </Link>
+      </div>
+      <p>O continúa con tus redes sociales</p>
+      <div className={styles.Form__socialMedia}>
+        <img
+          src="https://i.postimg.cc/V6QV2gyX/google-Brand.png"
+          width="24"
+          alt="Continuar con Google"
+          onClick={() => onSignWithExternalProvider("google")}
+        />
+        <FontAwesomeIcon
+          icon={faFacebook}
+          color="#0674DF"
+          size="xl"
+          onClick={() => onSignWithExternalProvider("facebook")}
+        />
+        <FontAwesomeIcon
+          icon={faTwitter}
+          color="#00A3E2"
+          size="xl"
+          onClick={() => onSignWithExternalProvider("twitter")}
+        />
+      </div>
+      {mutationAuthEmail.isError && <ErrorFeedback code={mutationAuthEmail.error.code} />}
+    </form>
   );
 }
 

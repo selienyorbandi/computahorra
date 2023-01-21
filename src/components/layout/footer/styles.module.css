@@ -1,6 +1,7 @@
 .Footer {
   background: var(--darkest-color);
   bottom: 0;
+  margin-top: auto;
 }
 
 .Footer__content {

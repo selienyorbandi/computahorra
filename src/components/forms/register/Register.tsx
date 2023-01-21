@@ -127,111 +127,105 @@ function Register() {
   };
 
   return (
-    <div className={styles.RegisterForm}>
-      <form className={styles.Form} onSubmit={e => handleSubmit(e)}>
-        <FontAwesomeIcon icon={faCircleUser} color="#6C2F9A" size="4x" />
-        <h1>Crea tu cuenta</h1>
-        <div>
-          <label htmlFor="name">
-            <span>Nombre *</span>
-            <input
-              type="text"
-              name="name"
-              placeholder="Nombre"
-              id="name"
-              onKeyDown={restrictOnlyAlphabet}
-              onChange={e => handleInputChange(e)}
-              onBlur={e => validateInputOnBlur(e)}
-              className={errors.name.is ? styles.ErrorInput : ""}
-            />
-            {errors.name.is ? <ErrorFeedback code={errors.name.code} /> : <></>}
-          </label>
-          <label htmlFor="surname">
-            <span>Apellido *</span>
-            <input
-              type="text"
-              name="surname"
-              placeholder="Apellido"
-              id="surname"
-              onKeyDown={restrictOnlyAlphabet}
-              onChange={e => handleInputChange(e)}
-              onBlur={e => validateInputOnBlur(e)}
-              className={errors.surname.is ? styles.ErrorInput : ""}
-            />
-            {errors.surname.is ? <ErrorFeedback code={errors.surname.code} /> : <></>}
-          </label>
-        </div>
-        <div>
-          <label htmlFor="email">
-            <span>Correo Electrónico *</span>
-            <input
-              type="email"
-              name="email"
-              placeholder="Correo electrónico"
-              id="email"
-              onChange={e => handleInputChange(e)}
-              onBlur={e => validateInputOnBlur(e)}
-              className={errors.email.is ? styles.ErrorInput : ""}
-            />
-            {errors.email.is ? <ErrorFeedback code={errors.email.code} /> : <></>}
-          </label>
-          <label htmlFor="tel">
-            <span>Teléfono</span>
-            <input
-              type="tel"
-              name="tel"
-              placeholder="Teléfono"
-              id="tel"
-              onKeyDown={restrictOnlyNumbersPlus}
-              onChange={e => handleInputChange(e)}
-              onBlur={e => validateInputOnBlur(e)}
-              className={errors.tel.is ? styles.ErrorInput : ""}
-            />
-            {errors.tel.is ? <ErrorFeedback code={errors.tel.code} /> : <></>}
-          </label>
-        </div>
-        <div>
-          <label htmlFor="password">
-            <span>Contraseña *</span>
-            <input
-              type="password"
-              name="password"
-              placeholder="Contraseña"
-              id="password"
-              onChange={e => handleInputChange(e)}
-              onBlur={e => validateInputOnBlur(e)}
-              className={errors.password.is ? styles.ErrorInput : ""}
-            />
-            {errors.password.is ? <ErrorFeedback code={errors.password.code} /> : <></>}
-          </label>
-          <label htmlFor="confirmPassword">
-            <span>Repetir contraseña *</span>
-            <input
-              type="password"
-              name="confirmPassword"
-              placeholder="Repetir contraseña"
-              id="confirmPassword"
-              onChange={e => handleInputChange(e)}
-              onBlur={e => validateInputOnBlur(e)}
-              className={errors.confirmPassword.is ? styles.ErrorInput : ""}
-            />
-            {errors.confirmPassword.is ? (
-              <ErrorFeedback code={errors.confirmPassword.code} />
-            ) : (
-              <></>
-            )}
-          </label>
-        </div>
-        <div className={styles.Form__submit}>
-          <Button message={"Registrarme"} type="primary" size="sm" />
-          <Link to="/login">
-            <Button type="secondary" message={"Ya tengo cuenta"} size="sm" />
-          </Link>
-        </div>
-        {mutationSignUp.isError ? <ErrorFeedback code={mutationSignUp.error.code} /> : <></>}
-        {mutationPostUser.isError ? <ErrorFeedback code={mutationPostUser.error.code} /> : <></>}
-      </form>
-    </div>
+    <form className={styles.Form} onSubmit={e => handleSubmit(e)}>
+      <FontAwesomeIcon icon={faCircleUser} color="#6C2F9A" size="4x" />
+      <h1>Crea tu cuenta</h1>
+      <div>
+        <label htmlFor="name">
+          <span>Nombre *</span>
+          <input
+            type="text"
+            name="name"
+            placeholder="Nombre"
+            id="name"
+            onKeyDown={restrictOnlyAlphabet}
+            onChange={e => handleInputChange(e)}
+            onBlur={e => validateInputOnBlur(e)}
+            className={errors.name.is ? styles.ErrorInput : ""}
+          />
+          {errors.name.is ? <ErrorFeedback code={errors.name.code} /> : <></>}
+        </label>
+        <label htmlFor="surname">
+          <span>Apellido *</span>
+          <input
+            type="text"
+            name="surname"
+            placeholder="Apellido"
+            id="surname"
+            onKeyDown={restrictOnlyAlphabet}
+            onChange={e => handleInputChange(e)}
+            onBlur={e => validateInputOnBlur(e)}
+            className={errors.surname.is ? styles.ErrorInput : ""}
+          />
+          {errors.surname.is ? <ErrorFeedback code={errors.surname.code} /> : <></>}
+        </label>
+      </div>
+      <div>
+        <label htmlFor="email">
+          <span>Correo Electrónico *</span>
+          <input
+            type="email"
+            name="email"
+            placeholder="Correo electrónico"
+            id="email"
+            onChange={e => handleInputChange(e)}
+            onBlur={e => validateInputOnBlur(e)}
+            className={errors.email.is ? styles.ErrorInput : ""}
+          />
+          {errors.email.is ? <ErrorFeedback code={errors.email.code} /> : <></>}
+        </label>
+        <label htmlFor="tel">
+          <span>Teléfono</span>
+          <input
+            type="tel"
+            name="tel"
+            placeholder="Teléfono"
+            id="tel"
+            onKeyDown={restrictOnlyNumbersPlus}
+            onChange={e => handleInputChange(e)}
+            onBlur={e => validateInputOnBlur(e)}
+            className={errors.tel.is ? styles.ErrorInput : ""}
+          />
+          {errors.tel.is ? <ErrorFeedback code={errors.tel.code} /> : <></>}
+        </label>
+      </div>
+      <div>
+        <label htmlFor="password">
+          <span>Contraseña *</span>
+          <input
+            type="password"
+            name="password"
+            placeholder="Contraseña"
+            id="password"
+            onChange={e => handleInputChange(e)}
+            onBlur={e => validateInputOnBlur(e)}
+            className={errors.password.is ? styles.ErrorInput : ""}
+          />
+          {errors.password.is ? <ErrorFeedback code={errors.password.code} /> : <></>}
+        </label>
+        <label htmlFor="confirmPassword">
+          <span>Repetir contraseña *</span>
+          <input
+            type="password"
+            name="confirmPassword"
+            placeholder="Repetir contraseña"
+            id="confirmPassword"
+            onChange={e => handleInputChange(e)}
+            onBlur={e => validateInputOnBlur(e)}
+            className={errors.confirmPassword.is ? styles.ErrorInput : ""}
+          />
+          {errors.confirmPassword.is ? <ErrorFeedback code={errors.confirmPassword.code} /> : <></>}
+        </label>
+      </div>
+      <div className={styles.Form__submit}>
+        <Button message={"Registrarme"} type="primary" size="sm" />
+        <Link to="/login">
+          <Button type="secondary" message={"Ya tengo cuenta"} size="sm" />
+        </Link>
+      </div>
+      {mutationSignUp.isError ? <ErrorFeedback code={mutationSignUp.error.code} /> : <></>}
+      {mutationPostUser.isError ? <ErrorFeedback code={mutationPostUser.error.code} /> : <></>}
+    </form>
   );
 }
 

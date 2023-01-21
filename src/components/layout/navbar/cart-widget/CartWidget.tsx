@@ -12,7 +12,11 @@ function CartWidget() {
 
   return (
     <Link to="/carrito-de-compras" className={styles.CartWidget}>
-      <FontAwesomeIcon icon={faCartShopping} className={styles.FontAwesomeIcon} />
+      <FontAwesomeIcon
+        icon={faCartShopping}
+        className={styles.FontAwesomeIcon}
+        title="Carrito de compras"
+      />
       {cartList && getTotalQuantity() > 0 ? (
         <div className={styles.CartWidget__ItemCount}>{getTotalQuantity()}</div>
       ) : (

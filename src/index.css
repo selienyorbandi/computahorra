@@ -24,10 +24,8 @@ body {
   overflow-x: hidden;
 }
 
-.Wrapper {
+.App {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto auto auto;
-  justify-tracks: center;
-  grid-column: auto;
 }

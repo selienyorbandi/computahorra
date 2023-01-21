@@ -5,8 +5,8 @@ import "./App.css";
 import Layout from "./components/layout/Layout";
 import Loader from "./components/loader/Loader";
 import { CartContextProvider } from "./context/CartContext";
-import ItemDetailPage from "./pages/item-detail/ItemDetail.page";
 
+const ItemDetailPage = lazy(() => import("./pages/item-detail/ItemDetail.page"));
 const PoliticaDePrivacidad = lazy(() => import("./pages/legal/PoliticaDePrivacidad.page"));
 const TerminosYCondiciones = lazy(() => import("./pages/legal/TerminosYCondiciones.page"));
 const GarantiaYDevoluciones = lazy(() => import("./pages/legal/GarantiaYDevoluciones.page"));

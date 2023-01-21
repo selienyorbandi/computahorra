@@ -70,7 +70,7 @@ function NavBar() {
           </div>
           <NavLink to={"/"}>
             <div className={styles.NavBar__brandLogo}>
-              <img src={logo} alt="Computahorra logo" width="132" height="44" />
+              <img src={logo} alt="Logo de computahorra" width="132" height="44" />
             </div>
           </NavLink>
           <SearchBar />
@@ -80,9 +80,11 @@ function NavBar() {
           </div>
         </div>
       </div>
-      <ul className={styles.NavBar__list}>
-        <div className={styles.NavBar__list__content}>
-          <NavLink to="/">Inicio</NavLink>
+      <div className={styles.NavBar__list}>
+        <ul className={styles.NavBar__list__content}>
+          <li>
+            <NavLink to="/">Inicio</NavLink>
+          </li>
           <li onClick={handleCategoriesClick}>
             Categorías&nbsp;
             <FontAwesomeIcon icon={faCaretDown} className={styles.NavBar__categories} />
@@ -94,15 +96,19 @@ function NavBar() {
               <></>
             )}
           </li>
-          <NavLink to="/ayuda">Centro de ayuda</NavLink>
-          <NavLink to="/Contact">Contacto</NavLink>
-        </div>
-      </ul>
+          <li>
+            <NavLink to="/ayuda">Centro de ayuda</NavLink>
+          </li>
+          <li>
+            <NavLink to="/Contact">Contacto</NavLink>
+          </li>
+        </ul>
+      </div>
       {openMenu ? (
         <ul className={styles.NavBar__menu}>
           <NavLink to={"/"}>
             <div className={styles.NavBar__menu__brandLogo}>
-              <img src={logo} alt="Computahorra logo" width="132" height="44" />
+              <img src={logo} alt="Logo de computahorra" width="132" height="44" />
             </div>
             <hr />
           </NavLink>
