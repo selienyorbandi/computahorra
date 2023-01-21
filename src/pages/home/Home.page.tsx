@@ -6,7 +6,7 @@ import ItemList from "../../components/items/item-list/ItemList";
 import styles from "./styles.module.css";
 import Loader from "../../components/loader/Loader";
 import Slideshow from "../../components/slideshow/Slideshow";
-import images from "../../assets/img/promotions/promotions";
+import images from "../../assets/img/promotions/ene-2023/promotions";
 
 function Home() {
   const refGetTrendingItems = query(
