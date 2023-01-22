@@ -17,7 +17,8 @@ const Cart = lazy(() => import("./pages/cart/Cart.page"));
 const Checkout = lazy(() => import("./pages/checkout/Checkout.page"));
 const Login = lazy(() => import("./components/forms/login/Login"));
 const Register = lazy(() => import("./components/forms/register/Register"));
-const User = lazy(() => import("./pages/user/User"));
+const User = lazy(() => import("./pages/user/User.page"));
+const Contact = lazy(() => import("./pages/contact/Contact.page"));
 
 function App() {
   const queryClient = new QueryClient();
@@ -39,6 +40,7 @@ function App() {
                   <Route path="/login" element={<Login />} />
                   <Route path="/registro" element={<Register />} />
                   <Route path="/usuario" element={<User />} />
+                  <Route path="/contacto" element={<Contact />} />
                   <Route path="/politica-de-privacidad" element={<PoliticaDePrivacidad />} />
                   <Route path="/terminos-y-condiciones" element={<TerminosYCondiciones />} />
                   <Route path="/garantia-y-devoluciones" element={<GarantiaYDevoluciones />} />

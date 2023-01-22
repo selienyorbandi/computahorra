@@ -100,7 +100,7 @@ function NavBar() {
             <NavLink to="/ayuda">Centro de ayuda</NavLink>
           </li>
           <li>
-            <NavLink to="/Contact">Contacto</NavLink>
+            <NavLink to="/contacto">Contacto</NavLink>
           </li>
         </ul>
       </div>
