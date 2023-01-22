@@ -1,0 +1,17 @@
+.LegalPages {
+  margin: 3rem 0;
+  padding: 1rem;
+}
+
+.LegalPages h1,
+.LegalPages h2,
+.LegalPages p {
+  margin: 1rem 0;
+}
+
+@media screen and (min-width: 900px) {
+  .LegalPages {
+    margin: 0.5rem 0;
+    padding-bottom: 4rem;
+  }
+}

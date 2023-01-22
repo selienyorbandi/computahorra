@@ -1,0 +1,68 @@
+.Form {
+  background: #fff;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.144) 1px 1px 6px;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+  max-width: 700px;
+  margin: 80px auto 20px auto;
+}
+
+.Form h1 {
+  padding-bottom: 0.5rem;
+}
+
+.Form p {
+  padding-top: 0.5rem;
+}
+
+.Form__LogBtn {
+  padding-top: 0.5rem;
+  max-width: 250px;
+}
+
+.Form div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.Form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.Form input {
+  width: 250px;
+  padding: 0.5rem;
+  border: var(--secondary-color) solid 1px;
+  border-radius: 5px;
+}
+
+.Form__socialMedia img:hover,
+.Form__socialMedia svg:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+@media screen and (min-width: 900px) {
+  .Form {
+    padding: 4rem 2rem;
+    margin: 80px auto 2rem auto;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .Form {
+    margin: 50px auto 2rem auto;
+  }
+}

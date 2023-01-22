@@ -1,0 +1,21 @@
+.User {
+  margin: 80px 1rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.User button {
+  justify-self: center;
+  align-self: center;
+}
+
+@media screen and (min-width: 1100px) {
+  .User {
+    margin: 40px 0;
+    padding-bottom: 4rem;
+    display: grid;
+    padding: 1rem;
+  }
+}

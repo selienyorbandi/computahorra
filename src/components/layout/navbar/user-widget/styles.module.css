@@ -1,0 +1,17 @@
+.UserWidget {
+  position: relative;
+  text-decoration: none;
+  color: #000;
+  display: none;
+}
+
+.UserWidget:hover {
+  color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+@media screen and (min-width: 900px) {
+  .UserWidget {
+    display: inline;
+  }
+}

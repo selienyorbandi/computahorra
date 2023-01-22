@@ -1,0 +1,21 @@
+.Cart__empty {
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  padding: 0.2rem 0;
+  gap: 3rem;
+}
+
+.Cart__empty__Title {
+  font-size: 2.5rem;
+}
+
+@media screen and (min-width: 900px) {
+  .Cart__empty {
+    padding: 2rem 0;
+  }
+}

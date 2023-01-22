@@ -1,0 +1,6 @@
+.ErrMessage {
+  color: var(--danger-color);
+  font-weight: bold;
+  text-align: center;
+  max-width: 245px;
+}

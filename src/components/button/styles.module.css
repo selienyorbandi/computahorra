@@ -1,0 +1,32 @@
+.Button {
+  border-radius: 5px;
+  padding: 0.3rem;
+  cursor: pointer;
+  height: 40px;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+}
+
+.Button__sm {
+  width: 150px;
+}
+
+.Button__md {
+  width: 250px;
+}
+
+.Button:active,
+.Button:hover {
+  filter: saturate(1.25);
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.08);
+}
+
+.Button:active {
+  position: relative;
+  top: 1px;
+}
+
+.Button:disabled {
+  background: gray;
+}

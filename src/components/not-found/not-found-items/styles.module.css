@@ -1,0 +1,27 @@
+.DoesntExist {
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  background: #fff;
+  padding: 3rem 2rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.DoesntExist img {
+  filter: hue-rotate(54deg);
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+.DoesntExist h1 {
+  font-size: 2rem;
+  font-weight: 500;
+}

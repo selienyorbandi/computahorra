@@ -1,0 +1,64 @@
+.DataInput {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.DataInput p:nth-child(1) {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.DataInput p:nth-child(2) {
+  color: gray;
+}
+
+.DataInput svg {
+  align-self: center;
+  flex-wrap: nowrap;
+}
+
+.DataInput svg:hover {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.DataInput__Edit {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.DataInput__Edit h2 {
+  font-size: 1.5rem;
+}
+
+.DataInput__Edit form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.DataInput__Edit label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.DataInput__Edit input {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: solid 1px gray;
+}
+
+.DataInput__Edit div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.DataInput__Edit p {
+  font-size: 1rem;
+  align-self: center;
+}
