@@ -129,7 +129,7 @@ function Register() {
   return (
     <form className={styles.Form} onSubmit={e => handleSubmit(e)}>
       <FontAwesomeIcon icon={faCircleUser} color="#6C2F9A" size="4x" />
-      <h1>Crea tu cuenta</h1>
+      <h1>Cree su cuenta</h1>
       <div>
         <label htmlFor="name">
           <span>Nombre *</span>

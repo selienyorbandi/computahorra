@@ -119,7 +119,7 @@ function Login() {
           <Button message={"Crear cuenta"} size="md" type="secondary" />
         </Link>
       </div>
-      <p>O continúa con tus redes sociales</p>
+      <p>O continúe con sus redes sociales</p>
       <div className={styles.Form__socialMedia}>
         <img
           src="https://i.postimg.cc/V6QV2gyX/google-Brand.png"

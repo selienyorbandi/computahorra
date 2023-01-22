@@ -6,9 +6,9 @@ import cartCto from "../../../../assets/img/cartCTA.png";
 function EmptyCart() {
   return (
     <div className={styles.Cart__empty}>
-      <h1 className={styles.Cart__empty__Title}>No tienes productos en tu carrito</h1>
+      <h1 className={styles.Cart__empty__Title}>No tiene productos en su carrito</h1>
       <img src={cartCto} alt="Agregue los productos que desea"></img>
-      <p>Nuestros productos te esperan</p>
+      <p>Haga espacio para sus nuevos productos</p>
       <Link to="/">
         <Button message="Agregar productos" type="primary" />
       </Link>

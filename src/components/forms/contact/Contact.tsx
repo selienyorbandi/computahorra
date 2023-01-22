@@ -31,7 +31,7 @@ function ContactForm() {
   return (
     <form className={styles.ContactForm} onSubmit={e => handleSubmit(e)}>
       <FontAwesomeIcon icon={faEnvelopeOpenText} color="var(--primary-color)" size="4x" />
-      <h1>¿Quiéres decirnos algo?</h1>
+      <h1>¿Quiere decirnos algo?</h1>
       <div className={styles.ContactForm__UserData}>
         <label htmlFor="name">
           <span>Nombre</span>
@@ -63,7 +63,7 @@ function ContactForm() {
             name="message"
             value={message}
             onChange={e => setMessage(e.target.value)}
-            placeholder="¿Cómo podemos ayudarte?"></textarea>
+            placeholder="¿En qué necesita ayuda?"></textarea>
         </label>
       </div>
       <Button message={"Enviar mensaje"} type="primary" size="md" />
