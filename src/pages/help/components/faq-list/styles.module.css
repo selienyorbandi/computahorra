@@ -1,0 +1,8 @@
+.FaqList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.FaqList strong {
+  color: var(--primary-color);
+}

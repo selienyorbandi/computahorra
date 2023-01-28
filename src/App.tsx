@@ -19,6 +19,7 @@ const Login = lazy(() => import("./components/forms/login/Login"));
 const Register = lazy(() => import("./components/forms/register/Register"));
 const User = lazy(() => import("./pages/user/User.page"));
 const Contact = lazy(() => import("./pages/contact/Contact.page"));
+const Help = lazy(() => import("./pages/help/Help.page"));
 
 function App() {
   const queryClient = new QueryClient();
@@ -40,6 +41,7 @@ function App() {
                   <Route path="/login" element={<Login />} />
                   <Route path="/registro" element={<Register />} />
                   <Route path="/usuario" element={<User />} />
+                  <Route path="/ayuda" element={<Help />} />
                   <Route path="/contacto" element={<Contact />} />
                   <Route path="/politica-de-privacidad" element={<PoliticaDePrivacidad />} />
                   <Route path="/terminos-y-condiciones" element={<TerminosYCondiciones />} />

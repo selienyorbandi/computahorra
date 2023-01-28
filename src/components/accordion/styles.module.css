@@ -1,0 +1,29 @@
+.Accordion {
+  background: #fff;
+  border: solid 1px rgba(128, 128, 128, 0.329);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.Accordion__Header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: var(--gray-color);
+}
+.Accordion__Header:hover {
+  cursor: pointer;
+}
+.Accordion__Header__Title {
+  font-size: 1.2rem;
+}
+
+.Accordion__Header svg:hover,
+.Accordion__Header svg:active,
+.Accordion__Header svg:focus {
+  color: var(--primary-color);
+}
+
+.Accordion__Body {
+  padding: 1rem;
+}
