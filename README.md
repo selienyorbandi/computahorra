@@ -11,3 +11,6 @@ Computahorra es una tienda digital de productos de informática. Es un sitio web
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c9b66c7e-af3e-4903-83f6-eaeedc784846/deploy-status)](https://computahorra.netlify.app/)
 
 ![Muestra](https://i.postimg.cc/fTgYxqyF/computahorra.gif)
+
+
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/vt5fpE0bzSY)
