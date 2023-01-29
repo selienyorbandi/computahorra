@@ -36,7 +36,14 @@ function Login() {
 
   const onSignIn = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    mutationAuthEmail.mutate({ email, password });
+    mutationAuthEmail.mutate(
+      { email, password },
+      {
+        onSuccess() {
+          navigate("/usuario");
+        },
+      }
+    );
   };
 
   const onSignWithExternalProvider = (providerType: string) => {
@@ -81,7 +88,7 @@ function Login() {
     if (user.data) {
       navigate("/usuario");
     }
-  }, [user]);
+  }, [user, mutationAuthEmail, mutationAuthExternalProvider]);
 
   return (
     <form className={styles.Form} onSubmit={e => onSignIn(e)}>
