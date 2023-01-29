@@ -1,4 +1,4 @@
 function UserOrders() {
-  return <div>UserOrders</div>;
+  return <div></div>;
 }
 export default UserOrders;

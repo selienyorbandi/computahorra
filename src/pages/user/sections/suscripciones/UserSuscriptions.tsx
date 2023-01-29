@@ -1,4 +1,4 @@
 function UserSuscriptions() {
-  return <div>UserSuscriptions</div>;
+  return <div></div>;
 }
 export default UserSuscriptions;
